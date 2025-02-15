@@ -77,6 +77,9 @@ echo "Moving vimrc config to home..."
 rm -rf $HOME/.vimrc
 ln -s "$PWD/vimrc" "$HOME/.vimrc"
 
+echo "Sym linking icloud to HOME..." 
+ln -s $HOME/Library/Mobile\ Documents/com\~apple\~CloudDocs/ $HOME/icloud
+
 echo "Installing nerd font..."
 brew install font-meslo-lg-nerd-font
 
