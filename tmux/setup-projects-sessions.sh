@@ -6,8 +6,7 @@ tmux set-option remain-on-exit on
 echo "Setting up notes project session..."
 
 tmux new-session -ds notes -c ~/Documents/notes -n editor
-# tmux send-keys "nvim ./"
-tmux split-w -hd "cd ~/Documents/notes ; nvim ./Daily"
+tmux split-w -hd "cd ~/Documents/notes ; vim ./Daily"
 tmux new-window -d "cd ~/Documents/notes && lazygit"
 
 echo "Setting up dotfiles project session..."
