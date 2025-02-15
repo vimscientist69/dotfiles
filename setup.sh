@@ -39,6 +39,9 @@ brew install zoxide
 echo "Installing eza (better ls)..."
 brew install eza
 
+echo "Installing pomodoro timer..."
+brew install --cask tomatobar
+
 echo "Installing Lazygit..."
 brew install jesseduffield/lazygit/lazygit
 
