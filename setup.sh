@@ -18,6 +18,9 @@ brew install --cask nikitabobko/tap/aerospace
 echo "Installing Obsidian..."
 brew install --cask obsidian
 
+echo "Installing Google Chrome..."
+brew install --cask google-chrome
+
 echo "Installing Commitizen..."
 brew install commitizen
 
