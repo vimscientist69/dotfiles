@@ -18,9 +18,6 @@ brew install --cask nikitabobko/tap/aerospace
 echo "Installing Obsidian..."
 brew install --cask obsidian
 
-echo "Installing Google Chrome..."
-brew install --cask google-chrome
-
 echo "Installing Commitizen..."
 brew install commitizen
 
@@ -39,11 +36,14 @@ brew install zoxide
 echo "Installing eza (better ls)..."
 brew install eza
 
-echo "Installing pomodoro timer..."
-brew install --cask tomatobar
-
 echo "Installing Lazygit..."
 brew install jesseduffield/lazygit/lazygit
+
+echo "Installing Raycast..."
+brew install --cask raycast
+
+echo "Installing Arc Browser..."
+brew install --cask arc
 
 echo "Moving tmux config to config..." 
 rm -rf "$HOME/.config/tmux"
