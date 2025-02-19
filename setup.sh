@@ -12,6 +12,12 @@ brew install gh
 echo "Installing Alacritty..."
 brew install --cask alacritty
 
+echo "Installing tmux..."
+brew install tmux
+
+echo "Installing tmux required tmux packages..."
+brew install urlview
+
 echo "Installing Aerospace..."
 brew install --cask nikitabobko/tap/aerospace
 
