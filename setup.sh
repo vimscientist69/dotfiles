@@ -64,6 +64,9 @@ brew install --cask arc
 echo "Installing useful cli tools..."
 brew install fastfetch
 
+echo "Installing Ubersicht..."
+brew install --cask ubersicht
+
 echo "Moving tmux config to config..." 
 rm -rf "$HOME/.config/tmux"
 ln -s "$PWD/tmux/" "$HOME/.config/tmux"
