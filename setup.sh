@@ -15,11 +15,18 @@ brew install --cask alacritty
 echo "Installing tmux..."
 brew install tmux
 
+echo "Installing tpm..."
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+
 echo "Installing tmux required tmux packages..."
 brew install urlview
 
 echo "Installing Aerospace..."
 brew install --cask nikitabobko/tap/aerospace
+
+echo "Installing borders..."
+brew tap FelixKratz/formulae
+brew install borders
 
 echo "Installing Obsidian..."
 brew install --cask obsidian
@@ -41,6 +48,9 @@ brew install zoxide
 
 echo "Installing eza (better ls)..."
 brew install eza
+
+echo "Installing fzf..."
+brew install fzf
 
 echo "Installing Lazygit..."
 brew install jesseduffield/lazygit/lazygit
@@ -69,6 +79,10 @@ ln -s "$PWD/alacritty/" "$HOME/.config/alacritty"
 echo "Moving Aerospace config to config..." 
 rm -rf "$HOME/.config/aerospace"
 ln -s "$PWD/aerospace/" "$HOME/.config/aerospace"
+
+echo "Moving Borders config to config..." 
+rm -rf "$HOME/.config/borders"
+ln -s "$PWD/borders/" "$HOME/.config/borders"
 
 echo "Moving Lazygit config to config..." 
 rm -rf $HOME/Library/Application\ Support/lazygit
