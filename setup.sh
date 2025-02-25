@@ -21,6 +21,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 echo "Installing tmux required tmux packages..."
 brew install urlview
 
+echo "Installing Postman..."
+brew install --cask postman
+
 echo "Installing Aerospace..."
 brew install --cask nikitabobko/tap/aerospace
 
@@ -57,9 +60,6 @@ brew install jesseduffield/lazygit/lazygit
 
 echo "Installing Raycast..."
 brew install --cask raycast
-
-echo "Installing Arc Browser..."
-brew install --cask arc
 
 echo "Installing useful cli tools..."
 brew install fastfetch

@@ -21,24 +21,29 @@ export EDITOR='vim'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias n="nvim"
-alias lg="lazygit"
-alias ll="ls -alF"
-alias ls="eza --icons=always" # better ls
-alias cd="z" # better cd
-alias gst="git status"
-alias gcm="git commit -m"
-alias gcz="git cz commit"
-alias gaa="git add --all"
-alias ga="git add"
-alias gp="git push"
-alias gpf="git push --force"
-alias gpl="git pull"
-alias gsm="git switch main"
-alias gsmp="git switch main && git pull"
-alias gcb="git checkout -b"
-alias wmm="aerospace config --get mode.main.binding --json | less"
-alias wmr="aerospace config --get mode.resize.binding --json | less"
+# Check if the shell is interactive
+if [[ $- == *i* ]]; then
+  alias n="nvim"
+  alias lg="lazygit"
+  alias ll="ls -alF"
+  alias ls="eza --icons=always" # better ls
+  alias cd="z" # better cd
+  alias gst="git status"
+  alias gcm="git commit -m"
+  alias gcz="git cz commit"
+  alias gaa="git add --all"
+  alias ga="git add"
+  alias gp="git push"
+  alias gpf="git push --force"
+  alias gpl="git pull"
+  alias gsm="git switch main"
+  alias gsmp="git switch main && git pull"
+  alias gcb="git checkout -b"
+  alias wmm="aerospace config --get mode.main.binding --json | less"
+  alias wmr="aerospace config --get mode.resize.binding --json | less"
+  alias ttt="tt -notheme -n 30 -showwpm -blockcursor -noskip -highlight2"
+
+fi
 
 # history setup
 HISTFILE=$HOME/.zhistory
