@@ -27,6 +27,9 @@ brew install --cask postman
 echo "Installing Orbstack (docker client)..."
 brew install --cask orbstack
 
+echo "Installing fly cli (flyctl)..."
+brew install flyctl
+
 echo "Installing Aerospace..."
 brew install --cask nikitabobko/tap/aerospace
 
