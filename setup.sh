@@ -61,8 +61,8 @@ brew install zoxide
 echo "Installing eza (better ls)..."
 brew install eza
 
-echo "Installing fzf..."
-brew install fzf
+echo "Installing terminal utilities..."
+brew install ripgrep fzf fd
 
 echo "Installing Lazygit..."
 brew install jesseduffield/lazygit/lazygit
