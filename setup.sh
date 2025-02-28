@@ -12,6 +12,9 @@ brew install gh
 echo "Installing Alacritty..."
 brew install --cask alacritty
 
+echo "Installing Neovim..."
+brew install nvim
+
 echo "Installing tmux..."
 brew install tmux
 
@@ -76,6 +79,10 @@ brew install --cask ubersicht
 echo "Moving tmux config to config..." 
 rm -rf "$HOME/.config/tmux"
 ln -s "$PWD/tmux/" "$HOME/.config/tmux"
+
+echo "Moving nvim config to config..." 
+rm -rf "$HOME/.config/nvim"
+ln -s "$PWD/nvim/" "$HOME/.config/nvim"
 
 echo "Moving gitconfig config to home..." 
 rm -rf "$HOME/.gitconfig"
