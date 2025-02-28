@@ -9,17 +9,17 @@ return {
 				sidebars = "transparent",
 				floats = "transparent"
 			},
+      ---@diagnostic disable-next-line: unused-local
 			on_highlights = function(hl, c)
+        local prompt = "#ffffff"
 				hl.TelescopePromptBorder = {
-					bg = prompt,
 					fg = prompt,
 				}
 				hl.TelescopePromptTitle = {
-					bg = prompt,
 					fg = prompt,
 				}
 			end,
 		}
-	}
+	},
 }
 
