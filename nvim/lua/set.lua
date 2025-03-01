@@ -20,4 +20,3 @@ vim.o.incsearch = true
 vim.o.termguicolors = true
 vim.o.scrolloff = 8
 vim.o.signcolumn = "yes"
-vim.o.colorcolumn = "80"

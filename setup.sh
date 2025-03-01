@@ -46,6 +46,9 @@ brew install --cask obsidian
 echo "Installing Commitizen..."
 brew install commitizen
 
+echo "Installing JavaScript..."
+brew install node npm
+
 echo "Installing zsh-autocomplete..."
 brew install zsh-autocomplete
 
