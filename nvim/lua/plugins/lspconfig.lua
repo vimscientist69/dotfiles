@@ -135,8 +135,16 @@ return {
 				})
 
 				require("mason").setup()
-				local ensure_installed =
-					{ "lua_ls", "rust_analyzer", "bashls", "shfmt", "shellcheck", "html", "stylua" }
+				local ensure_installed = {
+					"lua_ls",
+					"rust_analyzer",
+					"bashls",
+					"shfmt",
+					"shellcheck",
+					"html",
+					"stylua",
+					"python-lsp-server",
+				}
 				require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 				local lspconfig = require("lspconfig")
@@ -165,6 +173,8 @@ return {
 				lspconfig.html.setup({
 					capabilities = capabilities,
 				})
+
+				require("lspconfig").pylsp.setup({})
 
 				vim.diagnostic.config({
 					-- update_in_insert = true,

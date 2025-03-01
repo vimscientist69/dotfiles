@@ -1,1 +1,1 @@
-wallpaper ~/Downloads/professional_pic.webp
+/bin/zsh -c "automator -i ~/Downloads/tokyo_pink.png ~/.config/automator/setDesktopPix.workflow"
