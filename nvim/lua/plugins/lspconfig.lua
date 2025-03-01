@@ -27,7 +27,40 @@ return {
 						},
 					},
 				},
-				"L3MON4D3/LuaSnip",
+				{
+					"L3MON4D3/LuaSnip",
+
+					opts = {
+						set_config = {
+							history = false,
+							updateevents = "TextChanged,TextChangedI",
+						},
+					},
+					keys = {
+						{
+							"<C-k>",
+							function()
+								local ls = require("luasnip")
+								if ls.expand_or_jumpable() then
+									ls.expand_or_jump()
+								end
+							end,
+							silent = true,
+							mode = { "i", "s" },
+						},
+						{
+							"<C-j>",
+							function()
+								local ls = require("luasnip")
+								if ls.jumpable(-1) then
+									ls.jump(-1)
+								end
+							end,
+							silent = true,
+							mode = { "i", "s" },
+						},
+					},
+				},
 				"saadparwaiz1/cmp_luasnip",
 				"WhoIsSethDaniel/mason-tool-installer.nvim",
 				{
@@ -68,6 +101,7 @@ return {
 
 					sources = {
 						{ name = "nvim_lsp" },
+						{ name = "path" },
 						{ name = "luasnip" }, -- For luasnip users.
 						{ name = "git" },
 					},
@@ -125,9 +159,7 @@ return {
 
 				lspconfig.bashls.setup({
 					capabilities = capabilities,
-					settings = {
-						filetypes = { "sh", "zsh" },
-					},
+					filetypes = { "sh", "zsh" },
 				})
 
 				lspconfig.html.setup({
@@ -144,6 +176,8 @@ return {
 						prefix = "",
 					},
 				})
+
+				require("luasnip.loaders.from_snipmate").lazy_load({ paths = { "~/.config/nvim/snippets" } })
 			end,
 		},
 	},
