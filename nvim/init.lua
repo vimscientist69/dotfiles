@@ -2,7 +2,7 @@ require("remap")
 require("config.lazy")
 require("set")
 
-vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme tokyonight-night]]
 
 local augroup = vim.api.nvim_create_augroup
 local VimScientistGroup = augroup('VimScientist', {})

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>random_wallpaper</string>
+	<key>Program</key>
+	<string>/Users/williamferns/.config/scripts/random_wallpaper/random_wallpaper.sh</string>
+    <key>StartInterval</key>
+    <integer>3600</integer>
+	<key>StandardOutPath</key>
+	<string>/Users/williamferns/Library/Logs/MyCustomScripts/random_wallpaper/log.stdout</string>
+	<key>StandardInPath</key>
+    <string>/Users/williamferns/Library/Logs/MyCustomScripts/random_wallpaper/log.stdin</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/williamferns/Library/Logs/MyCustomScripts/random_wallpaper/log.stderr</string>
+</dict>
+</plist>
