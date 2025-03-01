@@ -83,6 +83,10 @@ echo "Moving tmux config to config..."
 rm -rf "$HOME/.config/tmux"
 ln -s "$PWD/tmux/" "$HOME/.config/tmux"
 
+echo "Moving automator scripts to config..." 
+rm -rf "$HOME/.config/automator"
+ln -s "$PWD/automator/" "$HOME/.config/automator"
+
 echo "Moving nvim config to config..." 
 rm -rf "$HOME/.config/nvim"
 ln -s "$PWD/nvim/" "$HOME/.config/nvim"
@@ -94,10 +98,6 @@ ln -s "$PWD/gitconfig" "$HOME/.gitconfig"
 echo "Moving Alacritty config to config..." 
 rm -rf "$HOME/.config/alacritty"
 ln -s "$PWD/alacritty/" "$HOME/.config/alacritty"
-
-echo "Moving Kitty config to config..." 
-rm -rf "$HOME/.config/kitty"
-ln -s "$PWD/kitty/" "$HOME/.config/kitty"
 
 echo "Moving Aerospace config to config..." 
 rm -rf "$HOME/.config/aerospace"
