@@ -95,6 +95,10 @@ echo "Moving Alacritty config to config..."
 rm -rf "$HOME/.config/alacritty"
 ln -s "$PWD/alacritty/" "$HOME/.config/alacritty"
 
+echo "Moving Kitty config to config..." 
+rm -rf "$HOME/.config/kitty"
+ln -s "$PWD/kitty/" "$HOME/.config/kitty"
+
 echo "Moving Aerospace config to config..." 
 rm -rf "$HOME/.config/aerospace"
 ln -s "$PWD/aerospace/" "$HOME/.config/aerospace"

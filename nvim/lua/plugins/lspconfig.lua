@@ -25,7 +25,7 @@ return {
         "saadparwaiz1/cmp_luasnip"
       },
       config = function()
-        local cmp = require'cmp'
+        local cmp = require 'cmp'
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
@@ -50,12 +50,21 @@ return {
             { name = 'nvim_lsp' },
             { name = 'luasnip' }, -- For luasnip users.
             { name = 'git' },
-          }, {
+          },
+          {
             { name = 'buffer' },
           }
         })
 
+        -- If you want insert `(` after select function or method item
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+        cmp.event:on(
+          'confirm_done',
+          cmp_autopairs.on_confirm_done()
+        )
+
         require("cmp_git").setup()
+
 
         -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
         cmp.setup.cmdline({ '/', '?' }, {
@@ -90,7 +99,7 @@ return {
           on_init = function(client)
             if client.workspace_folders then
               local path = client.workspace_folders[1].name
-              if path ~= vim.fn.stdpath('config') and (vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc')) then
+              if path ~= vim.fn.stdpath('config') and (vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc')) then
                 return
               end
             end
@@ -118,6 +127,22 @@ return {
           settings = {
             Lua = {}
           }
+        }
+        local sourcekit_capabilities = vim.tbl_deep_extend(
+          "keep",
+          {},
+          {
+            workspace = {
+              didChangeWatchedFiles = {
+                dynamicRegistration = true,
+              },
+            },
+          },
+          capabilities
+        )
+
+        lspconfig.sourcekit.setup {
+          capabilities = sourcekit_capabilities
         }
 
         vim.diagnostic.config({
