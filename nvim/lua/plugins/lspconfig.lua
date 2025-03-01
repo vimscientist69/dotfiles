@@ -125,7 +125,9 @@ return {
 
 				lspconfig.bashls.setup({
 					capabilities = capabilities,
-					filetypes = { "sh", "zsh" },
+					settings = {
+						filetypes = { "sh", "zsh" },
+					},
 				})
 
 				lspconfig.html.setup({

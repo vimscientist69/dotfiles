@@ -1417,7 +1417,6 @@
   #
   # For example, given these settings:
   #
-  #   typeset -g POWERLEVEL9K_AZURE_CLASSES=(
   #     '*prod*'  PROD
   #     '*test*'  TEST
   #     '*'       OTHER)
