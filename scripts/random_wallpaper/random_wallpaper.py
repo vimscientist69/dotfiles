@@ -17,8 +17,7 @@ def main():
         "-i",
         wallpaper,
         "/Users/williamferns/.config/automator/setDesktopPix.workflow"
-    ]
-    )
+    ])
 
 
 if __name__ == "__main__":

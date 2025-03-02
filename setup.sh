@@ -149,3 +149,6 @@ sudo cp ./keyboard/dvorak_prog_improved.keylayout /Library/Keyboard\ Layouts
 
 echo "Authenticating with Github CLI..."
 gh auth login
+
+echo "Starting all custom scripts..."
+"$HOME/.config/scripts/enable_scripts.sh"

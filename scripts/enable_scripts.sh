@@ -1,4 +1,5 @@
 echo "Starting random wallpaper daemon"
-ls -s "$HOME"/.config/scripts/random_wallpaper/random_wallpaper.plist "$HOME"/Library/LaunchAgents/random_wallpaper.plist
+rm -rf "$HOME/Library/LaunchAgents/com.scripts.wallpaper.random.start.plist"
+ln -s "$HOME/.config/scripts/random_wallpaper/com.scripts.wallpaper.random.start.plist" "$HOME/Library/LaunchAgents"
 
-launchctl start random_wallpaper
+launchctl load "$HOME/Library/LaunchAgents/com.scripts.wallpaper.random.start.plist"

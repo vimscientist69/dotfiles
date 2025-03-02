@@ -48,4 +48,3 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 vim.keymap.set("n", "<leader>w", ":w<CR>")
-
