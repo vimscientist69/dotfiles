@@ -48,3 +48,8 @@ vim.keymap.set("n", "<leader><leader>", function()
 end)
 
 vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>qq", ":q<CR>")
+vim.keymap.set("n", "<leader>qs", ":wqa<CR>")
+vim.keymap.set("n", "<leader>qu", ":qa!<CR>")
+vim.keymap.set("n", "<leader>b", "<C-o>")
+vim.keymap.set("n", "<leader>n", "<C-i>")
