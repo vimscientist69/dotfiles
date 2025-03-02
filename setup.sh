@@ -13,7 +13,7 @@ echo "Installing Alacritty..."
 brew install --cask alacritty
 
 echo "Installing Neovim..."
-brew install nvim
+brew install --HEAD neovim
 
 echo "Installing tmux..."
 brew install tmux
