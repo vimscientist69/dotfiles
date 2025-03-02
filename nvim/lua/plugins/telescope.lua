@@ -4,6 +4,7 @@ return {
 		tag = "0.1.8",
 		dependencies = {
 			{ "nvim-lua/plenary.nvim" },
+			{ "nvim-telescope/telescope-media-files.nvim" },
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
@@ -28,6 +29,11 @@ return {
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
 			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Telescope buffers" },
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
+		},
+		opts = {
+			load_extension = {
+				media_files = "media_files",
+			},
 		},
 	},
 }

@@ -15,6 +15,9 @@ brew install --cask alacritty
 echo "Installing Neovim..."
 brew install --HEAD neovim
 
+echo "Installing packages required for neovim plugins to work correctly..."
+brew install chafa imagemagick ghostscript ffmpeg ffmpegthumbnailer
+
 echo "Installing tmux..."
 brew install tmux
 
