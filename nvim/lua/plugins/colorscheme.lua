@@ -7,11 +7,14 @@ return {
 			transparent = true,
 			styles = {
 				sidebars = "transparent",
-				floats = "transparent"
+				floats = "transparent",
 			},
-      ---@diagnostic disable-next-line: unused-local
+			on_colors = function(colors)
+				colors.bg_statusline = colors.none -- or "NONE"
+			end,
+			---@diagnostic disable-next-line: unused-local
 			on_highlights = function(hl, c)
-        local prompt = "#ffffff"
+				local prompt = "#ffffff"
 				hl.TelescopePromptBorder = {
 					fg = prompt,
 				}
@@ -19,7 +22,6 @@ return {
 					fg = prompt,
 				}
 			end,
-		}
+		},
 	},
 }
-
