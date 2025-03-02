@@ -24,6 +24,7 @@ return {
 			},
 			{ "<leader>ps", "<cmd>Telescope live_grep<cr>", desc = "Telescope live grep (project search)" },
 			{ "<leader>tb", "<cmd>Telescope builtin<cr>", desc = "Telescope builtin pickers" },
+			{ "<leader>mf", "<cmd>Telescope media_files<cr>", desc = "Telescope media files" },
 			{ "<C-p>", "<cmd>Telescope git_files<cr>", desc = "Telescope git files" },
 			{ "<leader>fr", "<cmd>Telescope lsp_references<cr>", desc = "Telescope find references" },
 			{ "<leader>fh", "<cmd>Telescope help_tags<cr>", desc = "Telescope help tags" },
