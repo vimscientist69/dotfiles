@@ -3,7 +3,7 @@
 - [x] Finish random_wallpaper script 
 - [x] Setup Discord presence in Neovim
 - [x] Setup Wakatime in Neovim
-- [ ] Be able to preview images in Neovim 
+- [x] Be able to preview images in Neovim 
 - [ ] Set mapping to focus back on open neovim editor in current session using harpoon (there is a section where it gives you a bind you can put inside your tmux config to do exactly that)
 - [ ] Run specific code blocks in Neovim
 - [x] Execute tests in Neovim 
