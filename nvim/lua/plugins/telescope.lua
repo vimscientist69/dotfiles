@@ -12,7 +12,7 @@ return {
 			{ "nvim-tree/nvim-web-devicons", opts = {} },
 		},
 		keys = {
-			-- { "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Telescope find files" },
+			{ "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Telescope find files" },
 			{
 				"<leader>en",
 				function()
