@@ -104,8 +104,6 @@ return {
 						{ name = "path" },
 						{ name = "luasnip" }, -- For luasnip users.
 						{ name = "git" },
-					},
-					{
 						{ name = "buffer" },
 					},
 				})
@@ -128,10 +126,17 @@ return {
 				cmp.setup.cmdline(":", {
 					mapping = cmp.mapping.preset.cmdline(),
 					sources = cmp.config.sources({
-						{ name = "path" },
-					}, {
 						{ name = "cmdline" },
-					}),
+						{ name = "path" },
+					}, {}),
+				})
+
+				-- Setup up vim-dadbod
+				cmp.setup.filetype({ "sql" }, {
+					sources = {
+						{ name = "vim-dadbod-completion" },
+						{ name = "buffer" },
+					},
 				})
 
 				require("mason").setup()
