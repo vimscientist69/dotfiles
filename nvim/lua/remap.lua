@@ -63,5 +63,5 @@ vim.keymap.set("n", "<S-Tab>", ":tabprevious<CR>")
 
 vim.keymap.set("n", "<C-Left>", "<C-w>5<")
 vim.keymap.set("n", "<C-Right>", "<C-w>5>")
-vim.keymap.set("n", "<C-Up>", "<C-W>-")
-vim.keymap.set("n", "<C-Down>", "<C-W>+")
+vim.keymap.set("n", "<C-Up>", "<C-W>2-")
+vim.keymap.set("n", "<C-Down>", "<C-W>2+")

@@ -19,4 +19,11 @@ vim.o.incsearch = true
 
 vim.o.termguicolors = true
 vim.o.scrolloff = 8
+
+vim.o.inccommand = "split"
+vim.o.smartcase = true
+vim.o.ignorecase = true
+vim.o.splitbelow = true
+vim.o.splitright = true
 vim.o.signcolumn = "yes"
+vim.o.clipboard = "unnamedplus"
