@@ -43,7 +43,8 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>X", "<cmd>!chmod +x %<CR>", { silent = true })
+vim.keymap.set("n", "<leader>x", "<cmd>.lua<CR>")
 
 vim.keymap.set("n", "<leader>ee", "oif err != nil {<CR>}<Esc>Oreturn err<Esc>")
 
@@ -59,3 +60,8 @@ vim.keymap.set("n", "<leader>qn", ":qa!<CR>")
 vim.keymap.set("n", "<leader>cc", ":tabnew<CR>")
 vim.keymap.set("n", "<Tab>", ":tabnext<CR>")
 vim.keymap.set("n", "<S-Tab>", ":tabprevious<CR>")
+
+vim.keymap.set("n", "<C-Left>", "<C-w>5<")
+vim.keymap.set("n", "<C-Right>", "<C-w>5>")
+vim.keymap.set("n", "<C-Up>", "<C-W>-")
+vim.keymap.set("n", "<C-Down>", "<C-W>+")
