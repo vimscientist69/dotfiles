@@ -77,7 +77,7 @@ echo "Installing Raycast..."
 brew install --cask raycast
 
 echo "Installing useful cli tools..."
-brew install fastfetch
+brew install fastfetch tokei
 
 echo "Installing Ubersicht..."
 brew install --cask ubersicht
