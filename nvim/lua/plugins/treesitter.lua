@@ -21,6 +21,10 @@ return {
 				ensure_installed = {
 					"vimdoc",
 					"javascript",
+					"regex",
+					"vim",
+					"markdown",
+					"markdown_inline",
 					"typescript",
 					"c",
 					"lua",

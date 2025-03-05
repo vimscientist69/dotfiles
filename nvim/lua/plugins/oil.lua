@@ -7,6 +7,12 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		require("oil").setup({
+			keymaps = {
+				["<C-h>"] = false,
+				["<C-l>"] = false,
+				["<C-p>"] = false,
+				["<leader><C-p>"] = "actions.preview",
+			},
 			default_file_explorer = true,
 			view_options = {
 				show_hidden = true,
