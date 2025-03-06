@@ -43,7 +43,7 @@ return {
 				})
 
 				lspconfig.sourcekit.setup({
-					capabilities = vim.tbl_deep_extend("keep", {}, {
+					capabilities = vim.tbl_deep_extend("keep", {
 						workspace = {
 							didChangeWatchedFiles = {
 								dynamicRegistration = true,
