@@ -29,3 +29,4 @@ vim.o.signcolumn = "yes"
 vim.g.vimwiki_folding = "custom"
 vim.o.foldlevelstart = 99
 vim.o.foldmethod = "manual"
+vim.o.laststatus = 3
