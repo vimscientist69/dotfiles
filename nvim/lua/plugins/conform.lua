@@ -11,7 +11,7 @@ return {
 				lua = { "stylua" },
 				zsh = { "shfmt" },
 				sh = { "shfmt" },
-                swift = { "swiftformat" },
+				swift = { "swiftformat" },
 				-- Conform will run multiple formatters sequentially
 				-- python = { "isort", "black" },
 				-- You can customize some of the format options for the filetype (:help conform.format)

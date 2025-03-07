@@ -55,6 +55,9 @@ return {
 			local lspkind = require("lspkind")
 
 			cmp.setup({
+				completion = {
+					completeopt = "menu,menuone,preview",
+				},
 				snippet = {
 					expand = function(args)
 						require("luasnip").lsp_expand(args.body)
@@ -74,8 +77,8 @@ return {
 
 				sources = {
 					{ name = "nvim_lsp" },
-					{ name = "path" },
 					{ name = "luasnip" }, -- For luasnip users.
+					{ name = "path" },
 					{ name = "git" },
 					{ name = "buffer" },
 				},

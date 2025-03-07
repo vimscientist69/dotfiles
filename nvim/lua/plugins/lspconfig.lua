@@ -31,6 +31,7 @@ return {
 					"html",
 					"stylua",
 					"python-lsp-server",
+					"swiftlint",
 				}
 				require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

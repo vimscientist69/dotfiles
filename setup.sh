@@ -2,8 +2,8 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 if [ ! -d "$HOME/.config" ]; then
-  echo "creating .config directory..."
-  mkdir "$HOME/.config"
+    echo "creating .config directory..."
+    mkdir "$HOME/.config"
 fi
 
 echo "Installing Github CLI..."
@@ -17,6 +17,8 @@ brew install --HEAD neovim
 
 echo "Installing packages required for neovim plugins to work correctly..."
 brew install chafa imagemagick ghostscript ffmpeg ffmpegthumbnailer
+brew install xcode-build-server xcbeautify jq rg ruby pipx
+cd ~/.local/share/nvim/lazy/xcodebuild.nvim || make install
 
 echo "Installing tmux..."
 brew install tmux
