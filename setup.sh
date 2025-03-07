@@ -18,6 +18,7 @@ brew install --HEAD neovim
 echo "Installing packages required for neovim plugins to work correctly..."
 brew install chafa imagemagick ghostscript ffmpeg ffmpegthumbnailer
 brew install xcode-build-server xcbeautify jq rg ruby pipx
+brew install stylua swiftformat shfmt
 cd ~/.local/share/nvim/lazy/xcodebuild.nvim || make install
 
 echo "Installing tmux..."
