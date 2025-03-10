@@ -3,7 +3,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/bin:$HOME/.config/scripts:$PATH
 
-# export TOOLCHAINS=$(plutil -extract CFBundleIdentifier raw /Library/Developer/Toolchains/swift-6.1-DEVELOPMENT-SNAPSHOT-2025-02-21-a.xctoolchain/Info.plist)
+export TOOLCHAINS=$(plutil -extract CFBundleIdentifier raw /Library/Developer/Toolchains/swift-6.1-DEVELOPMENT-SNAPSHOT-2025-02-21-a.xctoolchain/Info.plist)
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -44,7 +44,7 @@ if [[ $- == *i* ]]; then
   alias wmm="aerospace config --get mode.main.binding --json | less"
   alias wmr="aerospace config --get mode.resize.binding --json | less"
   alias ttt="tt -notheme -n 30 -showwpm -blockcursor -noskip -highlight2"
-
+  alias swiftclean="rm -rf ~/Library/Caches/org.swift.swiftpm ~/.swiftpm ./.swiftpm ./.build ~/Library/Developer/Xcode/DerivedData"
 fi
 
 # history setup

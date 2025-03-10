@@ -80,7 +80,7 @@ echo "Installing Raycast..."
 brew install --cask raycast
 
 echo "Installing useful cli tools..."
-brew install fastfetch tokei
+brew install fastfetch tokei vapor
 
 echo "Installing Ubersicht..."
 brew install --cask ubersicht
@@ -88,6 +88,10 @@ brew install --cask ubersicht
 echo "Moving tmux config to config..."
 rm -rf "$HOME/.config/tmux"
 ln -s "$PWD/tmux/" "$HOME/.config/tmux"
+
+echo "Moving sourcekit-lsp config to config..."
+rm -rf "$HOME/.sourcekit-lsp"
+ln -s "$PWD/sourcekit-lsp/" "$HOME/.sourcekit-lsp"
 
 echo "Moving wallpapers to config..."
 rm -rf "$HOME/.config/wallpapers"

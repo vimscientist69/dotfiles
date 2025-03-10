@@ -49,3 +49,120 @@ snippet main
             $2
         }
     }$0
+
+snippet switch
+    switch $1 {
+    case $2:
+        $3
+    default:
+        $4
+    }$0
+
+snippet case
+    case $1:
+        $2
+        break
+
+snippet for
+    for $1 in $2 {
+        $3
+    }$0
+
+snippet fori
+    for $1 in 0..<$2 {
+        $3
+    }$0
+
+snippet forr
+    for $1 in stride(from: $2, to: $3, by: $4) {
+        $5
+    }$0
+
+snippet trycatch
+    do {
+        $1
+    } catch {
+        $2
+    }$0
+
+snippet trycatchlet
+    do {
+        $1
+    } catch let error {
+        $2
+    }$0
+
+snippet doc
+    /// $0
+
+snippet log
+    logger.$1(
+        "$2",
+        metadata: [
+            $3
+        ]
+    )
+
+snippet trace
+    logger.trace(
+        "$2.",
+        metadata: [
+            "to": .string("\(String(describing: Self.self)).\(#function)"),
+            $0
+        ]
+    )
+
+
+snippet debug 
+    logger.debug(
+        "$2.",
+        metadata: [
+            "to": .string("\(String(describing: Self.self)).\(#function)"),
+            $0
+        ]
+    )
+
+snippet info
+    logger.info(
+        "$2.",
+        metadata: [
+            "to": .string("\(String(describing: Self.self)).\(#function)"),
+            $0
+        ]
+    )
+
+snippet notice
+    logger.notice(
+        "$2.",
+        metadata: [
+            "to": .string("\(String(describing: Self.self)).\(#function)"),
+            $0
+        ]
+    )
+
+snippet warning
+    logger.warning(
+        "$2.",
+        metadata: [
+            "to": .string("\(String(describing: Self.self)).\(#function)"),
+            $0
+        ]
+    )
+
+snippet error
+    logger.error(
+        "$2.",
+        metadata: [
+            "to": .string("\(String(describing: Self.self)).\(#function)"),
+            $0
+        ]
+    )
+
+snippet critical
+    logger.critical(
+        "$2.",
+        metadata: [
+            "to": .string("\(String(describing: Self.self)).\(#function)"),
+            $0
+        ]
+    )

@@ -19,6 +19,20 @@ return {
 				desc = "Run test under cursor.",
 			},
 			{
+				"<leader>tt",
+				function()
+					require("neotest").output_panel.toggle()
+				end,
+				desc = "Toggle output panel.",
+			},
+			{
+				"<leader>tx",
+				function()
+					require("neotest").output_panel.clear()
+				end,
+				desc = "Clear output panel.",
+			},
+			{
 				"<leader>tf",
 				function()
 					require("neotest").run.run(vim.fn.expand("%"))
