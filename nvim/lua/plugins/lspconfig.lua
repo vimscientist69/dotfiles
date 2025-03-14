@@ -23,6 +23,7 @@ return {
 			config = function()
 				require("mason").setup()
 				local ensure_installed = {
+					"codelldb",
 					"lua_ls",
 					"rust_analyzer",
 					"bashls",

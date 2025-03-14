@@ -80,7 +80,7 @@ echo "Installing Raycast..."
 brew install --cask raycast
 
 echo "Installing useful cli tools..."
-brew install fastfetch tokei vapor
+brew install fastfetch tokei vapor postgresql
 
 echo "Installing Ubersicht..."
 brew install --cask ubersicht
