@@ -8,7 +8,22 @@ return {
 	lazy = false,
 	opts = {
 		bigfile = { enabled = true },
-		dashboard = { enabled = true },
+		dashboard = {
+			enabled = true,
+			sections = {
+				{
+					section = "terminal",
+					cmd = "ascii-image-converter ~/.config/images/ai_profile_pic_no_bg.png -C -c",
+					random = 10,
+					pane = 1,
+					indent = 4,
+					height = 30,
+				},
+				-- { section = "header" },
+				-- { section = "keys", gap = 1, padding = 1 },
+				{ section = "startup" },
+			},
+		},
 		explorer = { enabled = false },
 		indent = { enabled = true },
 		input = { enabled = true },
