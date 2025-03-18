@@ -19,8 +19,6 @@ return {
 					indent = 4,
 					height = 30,
 				},
-				-- { section = "header" },
-				-- { section = "keys", gap = 1, padding = 1 },
 				{ section = "startup" },
 			},
 		},
@@ -322,7 +320,7 @@ return {
 			desc = "Goto Declaration",
 		},
 		{
-			"gr",
+			"<leader>gr",
 			function()
 				require("snacks").picker.lsp_references()
 			end,
@@ -344,7 +342,7 @@ return {
 			desc = "Goto T[y]pe Definition",
 		},
 		{
-			"<leader>ss",
+			"<leader>sh",
 			function()
 				require("snacks").picker.lsp_symbols()
 			end,

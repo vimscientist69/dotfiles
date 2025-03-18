@@ -1,4 +1,5 @@
 require("remap")
+require("autocmds")
 require("config.lazy")
 require("config.lsp")
 require("set")
