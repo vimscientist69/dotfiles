@@ -5,7 +5,7 @@ return {
 		"kristijanhusak/vim-dadbod-ui",
 		keys = {
 			{
-				"<leader>ud",
+				"<leader>Db",
 				"<cmd>DBUIToggle<CR>",
 			},
 		},
