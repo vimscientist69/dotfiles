@@ -14,7 +14,7 @@ return {
 		keys = {
 			{ "<leader>pf", "<cmd>Telescope find_files<cr>", desc = "Telescope find files" },
 			{
-				"<leader>en",
+				"<leader>ne",
 				function()
 					require("telescope.builtin").find_files({
 						cwd = vim.fn.stdpath("config"),

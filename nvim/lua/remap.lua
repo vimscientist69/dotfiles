@@ -20,7 +20,7 @@ vim.keymap.set("n", "Q", "<nop>")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- clear search highlights
-vim.keymap.set("n", "<C-c>", ":noh<CR>")
+vim.keymap.set("n", "<C-c>", ":noh<CR>", { silent = true })
 
 -- Deletes selected text without copying to clipboard and past
 vim.keymap.set("x", "<leader>p", [["_dP]])
