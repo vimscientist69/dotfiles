@@ -19,6 +19,8 @@ echo "Installing packages required for neovim plugins to work correctly..."
 brew install chafa imagemagick ghostscript ffmpeg ffmpegthumbnailer
 brew install xcode-build-server xcbeautify jq rg ruby pipx
 brew install stylua swiftformat shfmt
+brew install TheZoraiz/ascii-image-converter/ascii-image-converter
+
 cd ~/.local/share/nvim/lazy/xcodebuild.nvim || make install
 
 echo "Installing tmux..."
@@ -96,6 +98,10 @@ ln -s "$PWD/sourcekit-lsp/" "$HOME/.sourcekit-lsp"
 echo "Moving wallpapers to config..."
 rm -rf "$HOME/.config/wallpapers"
 ln -s "$PWD/wallpapers/" "$HOME/.config/wallpapers"
+
+echo "Moving images to config..."
+rm -rf "$HOME/.config/images"
+ln -s "$PWD/images/" "$HOME/.config/images"
 
 echo "Moving scripts to config..."
 rm -rf "$HOME/.config/scripts"
