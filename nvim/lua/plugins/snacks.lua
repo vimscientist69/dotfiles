@@ -339,7 +339,7 @@ return {
 			function()
 				require("snacks").picker.lsp_type_definitions()
 			end,
-			desc = "Goto T[y]pe Definition",
+			desc = "Goto Type Definition",
 		},
 		{
 			"<leader>sh",
