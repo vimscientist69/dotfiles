@@ -1,7 +1,7 @@
 return {
 	{
 		-- "ThePrimeagen/harpoon",
-		"vimscientist69/harpoon",
+		"vimscientist69/harpoon", -- fork with support for URI buffers in quick menu
 		keys = {
 			{
 				"<leader>ha",
