@@ -113,6 +113,7 @@ outer.right =      16
   alt-shift-0 = 'move-node-to-workspace 10'
 
   alt-r = 'mode resize'
+  alt-shift-b = 'mode empty'
 
 [mode.resize.binding]
   h = 'resize width -50'
@@ -120,5 +121,10 @@ outer.right =      16
   k = 'resize height -50'
   l = 'resize width +50'
 
+  enter = 'mode main'
+  esc = 'mode main'
+
+
+[mode.empty.binding]
   enter = 'mode main'
   esc = 'mode main'
