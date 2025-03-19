@@ -1,6 +1,7 @@
 return {
 	{
-		"ThePrimeagen/harpoon",
+		-- "ThePrimeagen/harpoon",
+		"vimscientist69/harpoon",
 		keys = {
 			{
 				"<leader>ha",
