@@ -6,11 +6,27 @@ return {
 		"folke/snacks.nvim",
 		"nvim-tree/nvim-web-devicons",
 	},
+	lazy = false,
 	keys = {
 		{
-			"<leader>op",
+			"<leader>opl",
 			"<cmd>Octo pr list<CR>",
 			desc = "list pull requests",
+		},
+		{
+			"<leader>opc",
+			"<cmd>Octo pr create<CR>",
+			desc = "create a pull request",
+		},
+		{
+			"<leader>oil",
+			"<cmd>Octo issue list<CR>",
+			desc = "list issues",
+		},
+		{
+			"<leader>oic",
+			"<cmd>Octo issue create<CR>",
+			desc = "create issue",
 		},
 	},
 	opts = {
@@ -35,7 +51,7 @@ return {
 		resolved_icon = " ", -- resolved indicator
 		reaction_viewer_hint_icon = " ", -- marker for user reactions
 		commands = {}, -- additional subcommands made available to `Octo` command
-		users = "search", -- Users for assignees or reviewers. Values: "search" | "mentionable" | "assignable"
+		users = "assignable", -- Users for assignees or reviewers. Values: "search" | "mentionable" | "assignable"
 		user_icon = " ", -- user icon
 		ghost_icon = "󰊠 ", -- ghost icon
 		timeline_marker = " ", -- timeline marker
