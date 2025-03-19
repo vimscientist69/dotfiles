@@ -59,6 +59,16 @@ local augroup = vim.api.nvim_create_augroup
 local VimScientistGroup = augroup("VimScientist", {})
 local autocmd = vim.api.nvim_create_autocmd
 
+local function buildProject()
+	-- local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+	-- get current filetype of current buffer
+	local filetype = vim.bo.filetype
+
+	if filetype == "swift" then
+		vim.cmd("!swift build")
+	end
+end
+
 autocmd("LspAttach", {
 	group = VimScientistGroup,
 	callback = function(e)
@@ -88,6 +98,7 @@ autocmd("LspAttach", {
 			vim.diagnostic.open_float()
 		end, opts)
 		vim.keymap.set("n", "<leader>lr", function()
+			buildProject()
 			vim.cmd("LspRestart")
 		end, opts)
 		vim.keymap.set("n", "[d", goto_next_diagnostic_global, { desc = "Go to next diagnostic in project" })
