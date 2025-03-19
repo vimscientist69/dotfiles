@@ -55,9 +55,9 @@ vim.keymap.set("n", "<leader>qq", ":q<CR>")
 vim.keymap.set("n", "<leader>qs", ":wqa<CR>")
 vim.keymap.set("n", "<leader>qn", ":qa!<CR>")
 
-vim.keymap.set("n", "<leader>bc", ":tabnew<CR>")
-vim.keymap.set("n", "<leader>bn", ":tabnext<CR>")
-vim.keymap.set("n", "<leader>bp", ":tabprevious<CR>")
+vim.keymap.set("n", "<leader>ct", ":tabnew<CR>")
+vim.keymap.set("n", "]t", ":tabnext<CR>")
+vim.keymap.set("n", "[t", ":tabprevious<CR>")
 
 vim.keymap.set("n", "<C-Left>", "<C-w>5<")
 vim.keymap.set("n", "<C-Right>", "<C-w>5>")
