@@ -7,12 +7,7 @@ return {
 			desc = "Blame current line",
 		},
 		{
-			"<leader>bl",
-			"<cmd>Gitsigns toggle_current_line_blame<CR>",
-			desc = "Blame current line",
-		},
-		{
-			"]c",
+			"]s",
 			function()
 				if vim.wo.diff then
 					vim.cmd.normal({ "]c", bang = true })
@@ -23,7 +18,7 @@ return {
 			desc = "Navigate to next hunk",
 		},
 		{
-			"[c",
+			"[s",
 			function()
 				if vim.wo.diff then
 					vim.cmd.normal({ "[c", bang = true })
@@ -123,6 +118,7 @@ return {
 		{
 			"<leader>hq",
 			function()
+				---@diagnostic disable-next-line: missing-parameter
 				require("gitsigns").setqflist()
 			end,
 			desc = "Set quickfix list",
