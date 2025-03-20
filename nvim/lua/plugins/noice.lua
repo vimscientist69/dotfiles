@@ -10,9 +10,21 @@ return {
 			"rcarriga/nvim-notify",
 		},
 		event = "VeryLazy",
+		keys = {
+			{
+				"<leader>nh",
+				"<cmd>NoiceHistory<CR>",
+				desc = "Notification History",
+			},
+			{
+				"<leader>nd",
+				"<cmd>NoiceDismiss<CR>",
+				desc = "Dismiss All Notifications",
+			},
+		},
+
 		config = function()
 			require("noice").setup({
-				enabled = false,
 				-- add any options here
 				lsp = {
 					-- override markdown rendering so that **cmp** and other plugins use **Treesitter**

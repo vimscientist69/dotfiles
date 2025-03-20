@@ -78,13 +78,6 @@ return {
 			desc = "Command History",
 		},
 		{
-			"<leader>nh",
-			function()
-				require("snacks").picker.notifications()
-			end,
-			desc = "Notification History",
-		},
-		{
 			"<leader>fc",
 			function()
 				require("snacks").picker.files({ cwd = vim.fn.stdpath("config") })
@@ -385,13 +378,6 @@ return {
 			desc = "Select Scratch Buffer",
 		},
 		{
-			"<leader>n",
-			function()
-				require("snacks").notifier.show_history()
-			end,
-			desc = "Notification History",
-		},
-		{
 			"<leader>bd",
 			function()
 				require("snacks").bufdelete()
@@ -419,13 +405,6 @@ return {
 				require("snacks").lazygit()
 			end,
 			desc = "Lazygit",
-		},
-		{
-			"<leader>un",
-			function()
-				require("snacks").notifier.hide()
-			end,
-			desc = "Dismiss All Notifications",
 		},
 		{
 			"<c-/>",
