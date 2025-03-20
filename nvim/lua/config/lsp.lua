@@ -66,7 +66,11 @@ local function buildProject()
 
 	if filetype == "swift" then
 		vim.cmd("!swift build")
+	else
+		vim.notify("No build command for this filetype", 2)
+		return
 	end
+	vim.notify("Built project success.", 2)
 end
 
 autocmd("LspAttach", {
@@ -99,7 +103,9 @@ autocmd("LspAttach", {
 		end, opts)
 		vim.keymap.set("n", "<leader>lr", function()
 			buildProject()
+			vim.notify("Restarting LSP...", 2)
 			vim.cmd("LspRestart")
+			vim.notify("LSP Restarted success.", 2)
 		end, opts)
 		vim.keymap.set("n", "[d", goto_next_diagnostic_global, { desc = "Go to next diagnostic in project" })
 		vim.keymap.set("n", "]d", goto_prev_diagnostic_global, { desc = "Go to previous diagnostic in project" })
