@@ -1,59 +1,59 @@
-local function goto_diagnostic(d)
-	vim.api.nvim_set_current_buf(d.bufnr)
-	vim.api.nvim_win_set_cursor(0, { d.lnum + 1, d.col })
-	-- wait for the cursor to move
-	vim.defer_fn(function()
-		vim.diagnostic.open_float(d)
-	end, 10)
-end
-
-local function goto_next_diagnostic_global()
-	local diagnostics = vim.diagnostic.get(nil) -- Get all diagnostics in all buffers
-	if #diagnostics == 0 then
-		return
-	end
-
-	table.sort(diagnostics, function(a, b)
-		return a.lnum < b.lnum or (a.lnum == b.lnum and a.col < b.col)
-	end)
-
-	local pos = vim.api.nvim_win_get_cursor(0)
-	local bufnr = vim.api.nvim_get_current_buf()
-
-	for _, d in ipairs(diagnostics) do
-		if
-			d.bufnr > bufnr or (d.bufnr == bufnr and (d.lnum > pos[1] - 1 or (d.lnum == pos[1] - 1 and d.col > pos[2])))
-		then
-			goto_diagnostic(d)
-			return
-		end
-	end
-	goto_diagnostic(diagnostics[1])
-end
-
-local function goto_prev_diagnostic_global()
-	local diagnostics = vim.diagnostic.get(nil) -- Get all diagnostics in all buffers
-	if #diagnostics == 0 then
-		return
-	end
-
-	table.sort(diagnostics, function(a, b)
-		return a.lnum > b.lnum or (a.lnum == b.lnum and a.col > b.col)
-	end)
-
-	local pos = vim.api.nvim_win_get_cursor(0)
-	local bufnr = vim.api.nvim_get_current_buf()
-
-	for _, d in ipairs(diagnostics) do
-		if
-			d.bufnr < bufnr or (d.bufnr == bufnr and (d.lnum < pos[1] - 1 or (d.lnum == pos[1] - 1 and d.col < pos[2])))
-		then
-			goto_diagnostic(d)
-			return
-		end
-	end
-	goto_diagnostic(diagnostics[1])
-end
+-- local function goto_diagnostic(d)
+-- 	vim.api.nvim_set_current_buf(d.bufnr)
+-- 	vim.api.nvim_win_set_cursor(0, { d.lnum + 1, d.col })
+-- 	-- wait for the cursor to move
+-- 	vim.defer_fn(function()
+-- 		vim.diagnostic.open_float(d)
+-- 	end, 10)
+-- end
+--
+-- local function goto_next_diagnostic_global()
+-- 	local diagnostics = vim.diagnostic.get(nil) -- Get all diagnostics in all buffers
+-- 	if #diagnostics == 0 then
+-- 		return
+-- 	end
+--
+-- 	table.sort(diagnostics, function(a, b)
+-- 		return a.lnum < b.lnum or (a.lnum == b.lnum and a.col < b.col)
+-- 	end)
+--
+-- 	local pos = vim.api.nvim_win_get_cursor(0)
+-- 	local bufnr = vim.api.nvim_get_current_buf()
+--
+-- 	for _, d in ipairs(diagnostics) do
+-- 		if
+-- 			d.bufnr > bufnr or (d.bufnr == bufnr and (d.lnum > pos[1] - 1 or (d.lnum == pos[1] - 1 and d.col > pos[2])))
+-- 		then
+-- 			goto_diagnostic(d)
+-- 			return
+-- 		end
+-- 	end
+-- 	goto_diagnostic(diagnostics[1])
+-- end
+--
+-- local function goto_prev_diagnostic_global()
+-- 	local diagnostics = vim.diagnostic.get(nil) -- Get all diagnostics in all buffers
+-- 	if #diagnostics == 0 then
+-- 		return
+-- 	end
+--
+-- 	table.sort(diagnostics, function(a, b)
+-- 		return a.lnum > b.lnum or (a.lnum == b.lnum and a.col > b.col)
+-- 	end)
+--
+-- 	local pos = vim.api.nvim_win_get_cursor(0)
+-- 	local bufnr = vim.api.nvim_get_current_buf()
+--
+-- 	for _, d in ipairs(diagnostics) do
+-- 		if
+-- 			d.bufnr < bufnr or (d.bufnr == bufnr and (d.lnum < pos[1] - 1 or (d.lnum == pos[1] - 1 and d.col < pos[2])))
+-- 		then
+-- 			goto_diagnostic(d)
+-- 			return
+-- 		end
+-- 	end
+-- 	goto_diagnostic(diagnostics[1])
+-- end
 
 local augroup = vim.api.nvim_create_augroup
 local VimScientistGroup = augroup("VimScientist", {})
@@ -107,8 +107,20 @@ autocmd("LspAttach", {
 			vim.cmd("LspRestart")
 			vim.notify("LSP Restarted success.", 2)
 		end, opts)
-		vim.keymap.set("n", "[d", goto_next_diagnostic_global, { desc = "Go to next diagnostic in project" })
-		vim.keymap.set("n", "]d", goto_prev_diagnostic_global, { desc = "Go to previous diagnostic in project" })
+		-- vim.keymap.set("n", "[d", goto_next_diagnostic_global, { desc = "Go to next diagnostic in project" })
+		-- vim.keymap.set("n", "]d", goto_prev_diagnostic_global, { desc = "Go to previous diagnostic in project" })
+		vim.keymap.set(
+			"n",
+			"[d",
+			"<cmd>Lspsaga diagnostic_jump_next<CR>",
+			{ desc = "Go to next diagnostic in project" }
+		)
+		vim.keymap.set(
+			"n",
+			"]d",
+			"<cmd>Lspsaga diagnostic_jump_prev<CR>",
+			{ desc = "Go to previous diagnostic in project" }
+		)
 		vim.keymap.set("n", "<leader>vq", function()
 			vim.diagnostic.setqflist()
 		end, opts)

@@ -1,11 +1,7 @@
 return {
 	"lewis6991/gitsigns.nvim",
+	lazy = false,
 	keys = {
-		{
-			"<leader>bl",
-			"<cmd>Gitsigns toggle_current_line_blame<CR>",
-			desc = "Blame current line",
-		},
 		{
 			"]s",
 			function()
