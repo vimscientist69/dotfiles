@@ -1,14 +1,15 @@
 return {
 	"lewis6991/gitsigns.nvim",
 	lazy = false,
+
 	keys = {
 		{
 			"]s",
 			function()
 				if vim.wo.diff then
-					vim.cmd.normal({ "]c", bang = true })
+					vim.cmd.normal({ "]s", bang = true })
 				else
-					require("gitsigns").nav_hunk("next")
+					require("gitsigns").nav_hunk("next", { preview = true })
 				end
 			end,
 			desc = "Navigate to next hunk",
@@ -17,9 +18,9 @@ return {
 			"[s",
 			function()
 				if vim.wo.diff then
-					vim.cmd.normal({ "[c", bang = true })
+					vim.cmd.normal({ "[s", bang = true })
 				else
-					require("gitsigns").nav_hunk("prev")
+					require("gitsigns").nav_hunk("prev", { preview = true })
 				end
 			end,
 			desc = "Navigate to previous hunk",
@@ -28,11 +29,6 @@ return {
 			"<leader>hs",
 			"<cmd>Gitsigns stage_hunk<CR>",
 			desc = "Stage hunk",
-		},
-		{
-			"<leader>hr",
-			"<cmd>Gitsigns reset_hunk<CR>",
-			desc = "Reset hunk",
 		},
 		{
 			"<leader>hr",
@@ -162,11 +158,12 @@ return {
 		signs_staged_enable = true,
 		signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 		numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-		linehl = true, -- Toggle with `:Gitsigns toggle_linehl`
+		linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
 		word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
 		watch_gitdir = {
 			follow_files = true,
 		},
+
 		auto_attach = true,
 		attach_to_untracked = false,
 		current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
