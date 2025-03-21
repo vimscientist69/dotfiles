@@ -45,7 +45,7 @@ return {
 		{
 			"<leader>pf",
 			function()
-				require("snacks").picker.files()
+				require("snacks").picker.smart()
 			end,
 			desc = "Find Files",
 		},
