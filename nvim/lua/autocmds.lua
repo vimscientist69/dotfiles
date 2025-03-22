@@ -12,3 +12,8 @@ vim.api.nvim_create_autocmd("User", {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+	pattern = ".env*",
+	command = "set filetype=env",
+})
