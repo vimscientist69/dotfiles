@@ -33,6 +33,10 @@ return {
 					"stylua",
 					"python-lsp-server",
 					"swiftlint",
+					"docker-compose-language-service",
+					"dockerfile-language-server",
+					"taplo", -- toml files
+					"yaml-language-server",
 				}
 				require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
@@ -63,7 +67,25 @@ return {
 					capabilities = capabilities,
 				})
 
-				require("lspconfig").pylsp.setup({})
+				lspconfig.pylsp.setup({
+					capabilities = capabilities,
+				})
+
+				lspconfig.docker_compose_language_service.setup({
+					capabilities = capabilities,
+				})
+				lspconfig.dockerls.setup({
+					capabilities = capabilities,
+				})
+
+				lspconfig.taplo.setup({
+					capabilities = capabilities,
+				})
+
+				lspconfig.yamlls.setup({
+					capabilities = capabilities,
+					filetypes = { "yaml", "yaml.docker-compose", "yaml.gitlab", "yml" },
+				})
 
 				vim.diagnostic.config({
 					-- update_in_insert = true,
