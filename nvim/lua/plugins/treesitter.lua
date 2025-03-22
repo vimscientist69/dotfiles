@@ -19,6 +19,10 @@ return {
 				modules = {},
 				-- A list of parser names, or "all"
 				ensure_installed = {
+					"dockerfile",
+					"yaml",
+					"json",
+					"toml",
 					"vimdoc",
 					"javascript",
 					"regex",
