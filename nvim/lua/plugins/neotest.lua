@@ -39,6 +39,13 @@ return {
 				end,
 				desc = "Run all tests in current file.",
 			},
+			{
+				"<leader>ts",
+				function()
+					require("neotest").run.stop()
+				end,
+				desc = "Stop running tests.",
+			},
 		},
 		config = function()
 			local neotest = require("neotest")
