@@ -21,6 +21,7 @@ return {
 				ensure_installed = {
 					"dockerfile",
 					"yaml",
+					"html",
 					"json",
 					"toml",
 					"vimdoc",

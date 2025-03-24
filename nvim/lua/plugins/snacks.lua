@@ -45,7 +45,7 @@ return {
 		{
 			"<leader>pf",
 			function()
-				require("snacks").picker.smart()
+				require("snacks").picker.files()
 			end,
 			desc = "Find Files",
 		},
@@ -172,7 +172,7 @@ return {
 			desc = "Search History",
 		},
 		{
-			"<leader>sa",
+			"<leader>sA",
 			function()
 				require("snacks").picker.autocmds()
 			end,
