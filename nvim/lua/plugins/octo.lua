@@ -29,6 +29,11 @@ return {
 			desc = "list notifications",
 		},
 		{
+			"<leader>ona",
+			"<cmd>Octo notification all<CR>",
+			desc = "list all notifications",
+		},
+		{
 			"<leader>opC",
 			"<cmd>Octo pr checkout<CR>",
 			desc = "checkout pull request",
@@ -80,7 +85,32 @@ return {
 		outdated_icon = "󰅒 ", -- outdated indicator
 		resolved_icon = " ", -- resolved indicator
 		reaction_viewer_hint_icon = " ", -- marker for user reactions
-		commands = {}, -- additional subcommands made available to `Octo` command
+		commands = {
+			notification = {
+				list = function()
+					local utils = require("octo.utils")
+
+					local opts = {}
+
+					if vim.fn.confirm("Current Repo Only?", "&Yes\n&No", 1) == 1 then
+						opts.repo = utils.get_remote_name()
+					end
+
+					require("octo.picker").notifications(opts)
+				end,
+				all = function()
+					local utils = require("octo.utils")
+
+					local opts = { all = true }
+
+					if vim.fn.confirm("Current Repo Only?", "&Yes\n&No", 1) == 1 then
+						opts.repo = utils.get_remote_name()
+					end
+
+					require("octo.picker").notifications(opts)
+				end,
+			},
+		}, -- additional subcommands made available to `Octo` command
 		users = "assignable", -- Users for assignees or reviewers. Values: "search" | "mentionable" | "assignable"
 		user_icon = " ", -- user icon
 		ghost_icon = "󰊠 ", -- ghost icon

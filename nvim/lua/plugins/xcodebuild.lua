@@ -1,3 +1,5 @@
+-- TODO: setup mapping for XcodebuildCancel
+
 return {
 	"wojciech-kulik/xcodebuild.nvim",
 	dependencies = {
