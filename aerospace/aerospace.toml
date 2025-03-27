@@ -8,7 +8,11 @@ after-login-command = []
 # You can use it to add commands that run after AeroSpace startup.
 # 'after-startup-command' is run after 'after-login-command'
 # Available commands : https://nikitabobko.github.io/AeroSpace/commands
-after-startup-command = ['exec-and-forget ~/.config/tmux/setup-projects-sessions.sh', 'exec-and-forget brew update && brew upgrade', 'exec-and-forget borders active_color=0xff3399ff inactive_color=0xff494d64 width=5.0']
+after-startup-command = [
+    'exec-and-forget ~/.config/tmux/setup-projects-sessions.sh',
+    'exec-and-forget brew update && brew upgrade',
+    'exec-and-forget borders active_color=0xff3399ff inactive_color=0xff494d64 width=5.0',
+]
 
 # Start AeroSpace at login
 start-at-login = true
@@ -33,13 +37,13 @@ key-mapping.preset = 'dvorak'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 on-focus-changed = [
-  "exec-and-forget osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\"'",
+    "exec-and-forget osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\"'",
 ]
 
 exec-on-workspace-change = [
-  '/bin/zsh',
-  '-c',
-  '/usr/bin/osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\""',
+    '/bin/zsh',
+    '-c',
+    '/usr/bin/osascript -e "tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar-index-jsx\""',
 ]
 
 # Gaps between windows (inner-*) and between monitor edges (outer-*).
@@ -51,34 +55,34 @@ exec-on-workspace-change = [
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 16
-inner.vertical =  16
-outer.left =       16
-outer.bottom =     16
-outer.top =        16
-outer.right =      16
+inner.vertical = 16
+outer.left = 16
+outer.bottom = 16
+outer.top = 16
+outer.right = 16
 
 [mode.main.binding]
-  alt-h = 'focus left'
-  alt-j = 'focus down'
-  alt-k = 'focus up'
-  alt-l = 'focus right'
+alt-h = 'focus left'
+alt-j = 'focus down'
+alt-k = 'focus up'
+alt-l = 'focus right'
 
-  alt-shift-h = 'move left'
-  alt-shift-j = 'move down'
-  alt-shift-k = 'move up'
-  alt-shift-l = 'move right'
+alt-shift-h = 'move left'
+alt-shift-j = 'move down'
+alt-shift-k = 'move up'
+alt-shift-l = 'move right'
 
 # Consider using 'join-with' command as a 'split' replacement if you want to enable normalizations
-  alt-shift-v = 'split horizontal' # vertical
-  alt-shift-m = 'split vertical' # horizontal
+alt-shift-v = 'split horizontal' # vertical
+alt-shift-m = 'split vertical'   # horizontal
 
-  alt-f = 'fullscreen'
+alt-f = 'fullscreen'
 
-  alt-s = 'layout v_accordion' # 'layout stacking' in i3
-  alt-w = 'layout h_accordion' # 'layout tabbed' in i3
-  alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
+alt-s = 'layout v_accordion'               # 'layout stacking' in i3
+alt-w = 'layout h_accordion'               # 'layout tabbed' in i3
+alt-e = 'layout tiles horizontal vertical' # 'layout toggle split' in i3
 
-  alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
+alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 
 # Not supported, because this command is redundant in AeroSpace mental model.
 # See: https://nikitabobko.github.io/AeroSpace/guide#floating-windows
@@ -88,43 +92,44 @@ outer.right =      16
 # should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
 # alt-a = 'focus parent'
 
-  alt-shift-c = 'reload-config'
+alt-shift-c = 'reload-config'
 
-  alt-1 = 'workspace 1'
-  alt-2 = 'workspace 2'
-  alt-3 = 'workspace 3'
-  alt-4 = 'workspace 4'
-  alt-5 = 'workspace 5'
-  alt-6 = 'workspace 6'
-  alt-7 = 'workspace 7'
-  alt-8 = 'workspace 8'
-  alt-9 = 'workspace 9'
-  alt-0 = 'workspace 10'
-
-  alt-shift-1 = 'move-node-to-workspace 1'
-  alt-shift-2 = 'move-node-to-workspace 2'
-  alt-shift-3 = 'move-node-to-workspace 3'
-  alt-shift-4 = 'move-node-to-workspace 4'
-  alt-shift-5 = 'move-node-to-workspace 5'
-  alt-shift-6 = 'move-node-to-workspace 6'
-  alt-shift-7 = 'move-node-to-workspace 7'
-  alt-shift-8 = 'move-node-to-workspace 8'
-  alt-shift-9 = 'move-node-to-workspace 9'
-  alt-shift-0 = 'move-node-to-workspace 10'
-
-  alt-r = 'mode resize'
-  alt-shift-b = 'mode empty'
+alt-r = 'mode resize'
+alt-minus = 'mode workspaces'
+alt-shift-b = 'mode empty'
 
 [mode.resize.binding]
-  h = 'resize width -50'
-  j = 'resize height +50'
-  k = 'resize height -50'
-  l = 'resize width +50'
+h = 'resize width -50'
+j = 'resize height +50'
+k = 'resize height -50'
+l = 'resize width +50'
 
-  enter = 'mode main'
-  esc = 'mode main'
-
+space = 'mode main'
 
 [mode.empty.binding]
-  enter = 'mode main'
-  esc = 'mode main'
+space = 'mode main'
+
+[mode.workspaces.binding]
+a = 'workspace 1'
+o = 'workspace 2'
+e = 'workspace 3'
+u = 'workspace 4'
+j = 'workspace 5'
+d = 'workspace 6'
+h = 'workspace 7'
+t = 'workspace 8'
+n = 'workspace 9'
+g = 'workspace 10'
+
+shift-a = 'move-node-to-workspace 1'
+shift-o = 'move-node-to-workspace 2'
+shift-e = 'move-node-to-workspace 3'
+shift-u = 'move-node-to-workspace 4'
+shift-j = 'move-node-to-workspace 5'
+shift-d = 'move-node-to-workspace 6'
+shift-h = 'move-node-to-workspace 7'
+shift-t = 'move-node-to-workspace 8'
+shift-n = 'move-node-to-workspace 9'
+shift-g = 'move-node-to-workspace 10'
+
+space = 'mode main'
