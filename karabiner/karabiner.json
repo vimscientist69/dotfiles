@@ -61,7 +61,7 @@
                                         "value": 1
                                     }
                                 ],
-                                "from": { "key_code": "spacebar" },
+                                "from": { "key_code": "right_command" },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -80,7 +80,7 @@
                                         "value": 2
                                     }
                                 ],
-                                "from": { "key_code": "spacebar" },
+                                "from": { "key_code": "right_command" },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -99,7 +99,7 @@
                                         "value": 3
                                     }
                                 ],
-                                "from": { "key_code": "spacebar" },
+                                "from": { "key_code": "right_command" },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -118,7 +118,7 @@
                                         "value": 4
                                     }
                                 ],
-                                "from": { "key_code": "spacebar" },
+                                "from": { "key_code": "right_command" },
                                 "to": [
                                     {
                                         "set_variable": {
@@ -2113,6 +2113,10 @@
                         {
                             "from": { "key_code": "left_option" },
                             "to": [{ "key_code": "left_command" }]
+                        },
+                        {
+                            "from": { "key_code": "right_option" },
+                            "to": [{ "key_code": "right_command" }]
                         }
                     ]
                 }
