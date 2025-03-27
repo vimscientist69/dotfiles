@@ -17,9 +17,9 @@ return {
 					random = 10,
 					pane = 1,
 					indent = 4,
-					height = 30,
+					height = 25,
 				},
-				{ section = "startup" },
+				-- { section = "startup" },
 			},
 		},
 		explorer = { enabled = false },
@@ -29,7 +29,17 @@ return {
 			enabled = false,
 			timeout = 3000,
 		},
-		picker = { enabled = true },
+		picker = {
+			enabled = true,
+			layout = {
+				cycle = true,
+				--- Use the default layout or vertical if the window is too narrow
+				preset = function()
+					-- return vim.o.columns >= 120 and "default" or "vertical"
+					return "default"
+				end,
+			},
+		},
 		quickfile = { enabled = true },
 		scope = { enabled = true },
 		scroll = { enabled = false },

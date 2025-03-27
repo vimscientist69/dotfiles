@@ -51,6 +51,12 @@ brew install borders
 echo "Installing Obsidian..."
 brew install --cask obsidian
 
+echo "Installing OBS Studio..."
+brew install --cask obs
+
+echo "Installing karabiner..."
+brew install --cask karabiner-elements
+
 echo "Installing Commitizen..."
 brew install commitizen
 
@@ -90,6 +96,10 @@ brew install --cask ubersicht
 echo "Moving tmux config to config..."
 rm -rf "$HOME/.config/tmux"
 ln -s "$PWD/tmux/" "$HOME/.config/tmux"
+
+echo "Moving karabiner config to config..."
+rm -rf "$HOME/.config/karabiner"
+ln -s "$PWD/karabiner/" "$HOME/.config/karabiner"
 
 echo "Moving sourcekit-lsp config to config..."
 rm -rf "$HOME/.sourcekit-lsp"

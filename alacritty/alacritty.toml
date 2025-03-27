@@ -1,6 +1,4 @@
-general.import = [
-   "~/.config/alacritty/themes/tokyo-night.toml"
-]
+general.import = ["~/.config/alacritty/themes/tokyo-night.toml"]
 
 [env]
 TERM = "xterm-256color"
@@ -23,16 +21,16 @@ option_as_alt = "Both"
 
 normal.family = "MesloLGS Nerd Font Mono"
 
-size = 16
+size = 15
 
 [colors]
 transparent_background_colors = true
 
 [keyboard]
 bindings = [
-  { key = "Right", mods = "Alt", chars = "\u001BF" },
-  { key = "Left",  mods = "Alt", chars = "\u001BB" },
-  { key = "Left", mods = "Command", chars = "\u001B[H" },
-  { key = "Right", mods = "Command", chars = "\u001B[F" },
-  { key = "Backspace", mods = "Command", chars = "\u0015" }
+    { key = "Right", mods = "Alt", chars = "\u001BF" },
+    { key = "Left", mods = "Alt", chars = "\u001BB" },
+    { key = "Left", mods = "Command", chars = "\u001B[H" },
+    { key = "Right", mods = "Command", chars = "\u001B[F" },
+    { key = "Backspace", mods = "Command", chars = "\u0015" },
 ]
