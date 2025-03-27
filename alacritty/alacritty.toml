@@ -21,7 +21,7 @@ option_as_alt = "Both"
 
 normal.family = "MesloLGS Nerd Font Mono"
 
-size = 15
+size = 20
 
 [colors]
 transparent_background_colors = true

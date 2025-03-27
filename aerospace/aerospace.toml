@@ -104,10 +104,10 @@ j = 'resize height +50'
 k = 'resize height -50'
 l = 'resize width +50'
 
-space = 'mode main'
+shift-space = 'mode main'
 
 [mode.empty.binding]
-space = 'mode main'
+shift-space = 'mode main'
 
 [mode.workspaces.binding]
 a = 'workspace 1'
@@ -132,4 +132,4 @@ shift-t = 'move-node-to-workspace 8'
 shift-n = 'move-node-to-workspace 9'
 shift-g = 'move-node-to-workspace 10'
 
-space = 'mode main'
+shift-space = 'mode main'

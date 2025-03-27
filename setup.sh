@@ -1,58 +1,10 @@
-# echo "Installing homebrew..."
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-if [ ! -d "$HOME/.config" ]; then
-    echo "creating .config directory..."
-    mkdir "$HOME/.config"
-fi
-
-echo "Installing Github CLI..."
-brew install gh
-
-echo "Installing Alacritty..."
-brew install --cask alacritty
-
-echo "Installing Neovim..."
-brew install --HEAD neovim
-
-echo "Installing packages required for neovim plugins to work correctly..."
-brew install chafa imagemagick ghostscript ffmpeg ffmpegthumbnailer
-brew install xcode-build-server xcbeautify jq rg ruby pipx
-brew install stylua swiftformat shfmt
-brew install TheZoraiz/ascii-image-converter/ascii-image-converter
-
-cd ~/.local/share/nvim/lazy/xcodebuild.nvim || make install
-
-echo "Installing tmux..."
-brew install tmux
-
-echo "Installing tpm..."
-git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-
-echo "Installing tmux required tmux packages..."
-brew install urlview
-
-echo "Installing Postman..."
-brew install --cask postman
-
-echo "Installing Orbstack (docker client)..."
-brew install --cask orbstack
-
-echo "Installing fly cli (flyctl)..."
-brew install flyctl
-
-echo "Installing Aerospace..."
-brew install --cask nikitabobko/tap/aerospace
-
-echo "Installing borders..."
-brew tap FelixKratz/formulae
-brew install borders
-
-echo "Installing Obsidian..."
 brew install --cask obsidian
 
 echo "Installing OBS Studio..."
 brew install --cask obs
+
+echo "Installing kanata..."
+brew install kanata
 
 echo "Installing karabiner..."
 brew install --cask karabiner-elements
