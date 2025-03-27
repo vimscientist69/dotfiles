@@ -49,6 +49,10 @@ echo "Moving tmux config to config..."
 rm -rf "$HOME/.config/tmux"
 ln -s "$PWD/tmux/" "$HOME/.config/tmux"
 
+echo "Moving kanata.kbd to config..."
+rm -rf "$HOME/.config/kanata.kbd"
+cp "$PWD/kanata.kbd" "$HOME/.config"
+
 echo "Moving karabiner config to config..."
 rm -rf "$HOME/.config/karabiner"
 ln -s "$PWD/karabiner/" "$HOME/.config/karabiner"
