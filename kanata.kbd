@@ -126,7 +126,7 @@
     goto_arrows_on_fnlayer_s chord (chord fnlayer_switch_layers ;)
 )
 
-(defchords baselayer_switch_layers 15
+(defchords baselayer_switch_layers 30
     (d  ) @e-mod
     (  k) @t-mod
     (d k) @switch-symbol-layer
@@ -144,7 +144,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords symlayer_switch_layers 15
+(defchords symlayer_switch_layers 30
     (f  ) @u-mod-symbol-layer
     (  j) @h-mod-symbol-layer
     (f j) @switch-base-layer
@@ -162,7 +162,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords numlayer_switch_layers 15
+(defchords numlayer_switch_layers 30
     (f  ) @u-mod-number-layer
     (  j) @h-mod-number-layer
     (f j) @switch-base-layer
@@ -180,7 +180,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords arrowlayer_switch_layers 15
+(defchords arrowlayer_switch_layers 30
     (f  ) @u-mod-arrow-layer
     (  j) @h-mod-arrow-layer
     (f j) @switch-base-layer
@@ -198,7 +198,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords fnlayer_switch_layers 15
+(defchords fnlayer_switch_layers 30
     (f  ) @u-mod-fn-layer
     (  j) @h-mod-fn-layer
     (f j) @switch-base-layer
