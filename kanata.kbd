@@ -254,6 +254,7 @@
     . v
     / z
 
+    spc @tmeh
     __ nop0
 )
 
@@ -283,6 +284,7 @@
     n S-6
     m S-3
 
+    spc @tmeh
     __ nop0
 )
 
@@ -307,6 +309,7 @@
     l @n-mod-number-layer
     ; @goto_arrows_on_numlayer_s
 
+    spc @tmeh
     __ nop0
 )
 
@@ -327,6 +330,8 @@
     l @goto_numbers_on_arrowlayer_n
     ; @s-mod-arrow-layer
 
+
+    spc @tmeh
     __ nop0
 )
 
@@ -357,5 +362,6 @@
     n dnd
     m next
 
+    spc @tmeh
     __ nop0
 )
