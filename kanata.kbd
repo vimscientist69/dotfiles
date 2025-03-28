@@ -356,16 +356,18 @@
     ] esc
 
     caps @switch-symbol-layer
-    a @a-mod-fn-layer
-    s @o-mod-fn-layer
-    d @e-mod-fn-layer
-    f @u-mod-fn-layer
+    a @goto_arrows_on_fnlayer_a
+    s @goto_numbers_on_fnlayer_o
+    d @goto_symbols_on_fnlayer_e
+    f @goto_base_on_fnlayer_u
+
     g f5
     h f6
-    j @h-mod-fn-layer
-    k @t-mod-fn-layer
-    l @n-mod-fn-layer
-    ; @s-mod-fn-layer
+
+    j @goto_base_on_fnlayer_h
+    k @goto_symbols_on_fnlayer_t
+    l goto_numbers_on_fnlayer_n
+    ; @goto_arrows_on_fnlayer_s
     ' @switch-number-layer
 
     c prev
