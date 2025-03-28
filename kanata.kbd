@@ -37,14 +37,23 @@
     n-mod-number-layer (tap-hold $tap-time $hold-time 9 ralt)
     s-mod-number-layer (tap-hold $tap-time $hold-time 0 rctrl)
 
-a-mod-arrow-layer (tap-hold $tap-time $hold-time l lctrl)
-o-mod-arrow-layer (tap-hold $tap-time $hold-time 2 lalt)
+    a-mod-arrow-layer (tap-hold $tap-time $hold-time del lctrl)
+    o-mod-arrow-layer (tap-hold $tap-time $hold-time pgup lalt)
     e-mod-arrow-layer (tap-hold $tap-time $hold-time down lmeta)
     u-mod-arrow-layer (tap-hold $tap-time $hold-time up lsft)
     h-mod-arrow-layer (tap-hold $tap-time $hold-time left rsft)
     t-mod-arrow-layer (tap-hold $tap-time $hold-tgme rght rmeta)
-n-mod-arrow-layer (tap-hold $tap-tgme $hold-time 9 ralt)
-s-mod-arrow-layer (tap-hold $tap-time $hold-time 0 rctrl)
+    n-mod-arrow-layer (tap-hold $tap-tgme $hold-time pgdn ralt)
+    s-mod-arrow-layer (tap-hold $tap-time $hold-time insert rctrl)
+
+    a-mod-fn-layer (tap-hold $tap-time $hold-time f1 lctrl)
+    o-mod-fn-layer (tap-hold $tap-time $hold-time f2 lalt)
+    e-mod-fn-layer (tap-hold $tap-time $hold-time f3 lmeta)
+    u-mod-fn-layer (tap-hold $tap-time $hold-time f4 lsft)
+    h-mod-fn-layer (tap-hold $tap-time $hold-time f7 rsft)
+    t-mod-fn-layer (tap-hold $tap-time $hold-tgme f8 rmeta)
+    n-mod-fn-layer (tap-hold $tap-tgme $hold-time f9 ralt)
+    s-mod-fn-layer (tap-hold $tap-time $hold-time f10 rctrl)
 
     switch-symbol-layer (layer-switch symbol-layer)
     switch-number-layer (layer-switch number-layer)
@@ -99,7 +108,7 @@ s-mod-arrow-layer (tap-hold $tap-time $hold-time 0 rctrl)
     , w
     . v
     / z
-    rshift $switch-arrow-layer
+    rshift @switch-arrow-layer
 
     __ nop0
 )
@@ -113,7 +122,7 @@ s-mod-arrow-layer (tap-hold $tap-time $hold-time 0 rctrl)
     o _
     [ bspc 
     ] esc
-    caps @switch-fn-layer
+    \ @switch-fn-layer
 
     a @a-mod-symbol-layer
     s @o-mod-symbol-layer
@@ -131,9 +140,9 @@ s-mod-arrow-layer (tap-hold $tap-time $hold-time 0 rctrl)
     v ?
     n ^
     m #
-    rshift $switch-arrow-layer
+    rshift @switch-arrow-layer
 
-    RS-spc $switch-base-layer
+    RS-spc @switch-base-layer
     __ nop0
 )
 
@@ -144,8 +153,9 @@ s-mod-arrow-layer (tap-hold $tap-time $hold-time 0 rctrl)
     i %
     [ bspc 
     ] esc
-    caps @switch-symbol-layer
+    \ @switch-fn-layer
 
+    caps @switch-symbol-layer
     a @a-mod-number-layer
     s @o-mod-number-layer
     d @e-mod-number-layer
@@ -156,23 +166,23 @@ s-mod-arrow-layer (tap-hold $tap-time $hold-time 0 rctrl)
     k @t-mod-number-layer
     l @n-mod-number-layer
     ; @s-mod-number-layer
-    ' @switch-fn-layer
 
-    rshift $switch-arrow-layer
+    rshift @switch-arrow-layer
 
-    RS-spc $switch-base-layer
+    RS-spc @switch-base-layer
     __ nop0
 )
 
-(deflayermap (number-layer)
+(deflayermap (arrow-layer)
     e $
     r ~
     u `
     i %
     [ bspc 
     ] esc
-    caps @switch-symbol-layer
+    \ @switch-fn-layer
 
+    caps @switch-symbol-layer
     a @a-mod-arrow-layer
     s @o-mod-arrow-layer
     d @e-mod-arrow-layer
@@ -183,10 +193,40 @@ s-mod-arrow-layer (tap-hold $tap-time $hold-time 0 rctrl)
     k @t-mod-arrow-layer
     l @n-mod-arrow-layer
     ; @s-mod-arrow-layer
-    ' @switch-fn-layer
+    ' @switch-number-layer
 
-    rshift $switch-arrow-layer
+    RS-spc @switch-base-layer
+    __ nop0
+)
 
-    RS-spc $switch-base-layer
+(deflayermap (fn-layer)
+    e brup
+    r brdown
+    r mute
+    u volu
+    i voldwn
+    [ bspc 
+    ] esc
+
+    caps @switch-symbol-layer
+    a @a-mod-fn-layer
+    s @o-mod-fn-layer
+    d @e-mod-fn-layer
+    f @u-mod-fn-layer
+    g f5
+    h f6
+    j @h-mod-fn-layer
+    k @t-mod-fn-layer
+    l @n-mod-fn-layer
+    ; @s-mod-fn-layer
+    ' @switch-number-layer
+
+    c prev
+    v pp
+    n dnd
+    m next
+    rshift @switch-arrow-layer
+
+    RS-spc @switch-base-layer
     __ nop0
 )
