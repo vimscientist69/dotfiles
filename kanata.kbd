@@ -233,16 +233,18 @@
     \ @switch-fn-layer
 
     caps @switch-symbol-layer
-    a @goto_symbols_on_baselayer_a
-    s @goto_symbols_on_baselayer_o
+    a @goto_arrows_on_baselayer_a
+    s @goto_numbers_on_baselayer_o
     d @goto_symbols_on_baselayer_e
     f @u-mod
+
     g @goto_fn_on_baselayer_i
     h @goto_fn_on_baselayer_d
+
     j @h-mod
     k @goto_symbols_on_baselayer_t
-    l @goto_symbols_on_baselayer_n
-    ; @goto_symbols_on_baselayer_s
+    l @goto_numbers_on_baselayer_n
+    ; @goto_arrows_on_baselayer_s
     ' @switch-number-layer
 
     z '
@@ -270,8 +272,8 @@
     ] esc
 
     \ @switch-fn-layer
-    a @goto_base_on_symlayer_a
-    s @goto_base_on_symlayer_o
+    a @goto_arrows_on_symlayer_a
+    s @goto_numbers_on_symlayer_o
     d @e-mod-symbol-layer
     f @goto_base_on_symlayer_u
 
@@ -280,8 +282,8 @@
 
     j @goto_base_on_symlayer_h
     k @t-mod-symbol-layer
-    l @goto_base_on_symlayer_n
-    ; @goto_base_on_symlayer_s
+    l @goto_numbers_on_symlayer_n
+    ; @goto_arrows_on_symlayer_s
     ' @switch-number-layer
 
     c \
@@ -307,8 +309,10 @@
     s @o-mod-number-layer
     d @goto_symbols_on_numlayer_e
     f @goto_base_on_numlayer_u
-    g @goto_base_on_numlayer_i
-    h @goto_base_on_numlayer_d
+
+    g @goto_fn_on_numlayer_i
+    h @goto_fn_on_numlayer_d
+
     j @goto_base_on_numlayer_h
     k @goto_symbols_on_numlayer_t
     l @n-mod-number-layer
@@ -329,8 +333,10 @@
     s @o-mod-arrow-layer
     d @e-mod-arrow-layer
     f @u-mod-arrow-layer
+
     g home
     h end
+
     j @h-mod-arrow-layer
     k @t-mod-arrow-layer
     l @n-mod-arrow-layer
