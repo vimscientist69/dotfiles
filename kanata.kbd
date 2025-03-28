@@ -15,7 +15,6 @@
 (defsrc
     tab
     ret
-    lshift
     m
     spc
 )
@@ -172,13 +171,13 @@
     (  k) @t-mod-number-layer
     (d k) @switch-symbol-layer
 
-    (s  ) @o-mod
-    (  l) @n-mod
-    (s l) @switch-number-layer
-
     (a  ) @a-mod-number-layer
     (  ;) @s-mod-number-layer
     (a ;) @switch-arrow-layer
+
+    (g  ) 5
+    (  h) 6
+    (g h) @switch-fn-layer
 )
 
 (defchords arrowlayer_switch_layers 15
@@ -230,9 +229,7 @@
     p l
     [ bspc 
     ] esc
-    \ @switch-fn-layer
 
-    caps @switch-symbol-layer
     a @goto_arrows_on_baselayer_a
     s @goto_numbers_on_baselayer_o
     d @goto_symbols_on_baselayer_e
@@ -245,7 +242,7 @@
     k @goto_symbols_on_baselayer_t
     l @goto_numbers_on_baselayer_n
     ; @goto_arrows_on_baselayer_s
-    ' @switch-number-layer
+    ' - 
 
     z '
     x q
@@ -256,22 +253,18 @@
     , w
     . v
     / z
-    rshift @switch-arrow-layer
 
     __ nop0
 )
 
 (deflayermap (symbol-layer)
-    w -
     e S-1
     r S-\
     u /
     i S-2
-    o S--
     [ bspc 
     ] esc
 
-    \ @switch-fn-layer
     a @goto_arrows_on_symlayer_a
     s @goto_numbers_on_symlayer_o
     d @e-mod-symbol-layer
@@ -284,13 +277,11 @@
     k @t-mod-symbol-layer
     l @goto_numbers_on_symlayer_n
     ; @goto_arrows_on_symlayer_s
-    ' @switch-number-layer
 
     c \
     v S-/
     n S-6
     m S-3
-    rshift @switch-arrow-layer
 
     __ nop0
 )
@@ -302,9 +293,7 @@
     i S-5
     [ bspc 
     ] esc
-    \ @switch-fn-layer
 
-    caps @switch-symbol-layer
     a @goto_arrows_on_numlayer_a
     s @o-mod-number-layer
     d @goto_symbols_on_numlayer_e
@@ -318,17 +307,13 @@
     l @n-mod-number-layer
     ; @goto_arrows_on_numlayer_s
 
-    rshift @switch-arrow-layer
-
     __ nop0
 )
 
 (deflayermap (arrow-layer)
     [ bspc 
     ] esc
-    \ @switch-fn-layer
 
-    caps @switch-symbol-layer
     a @a-mod-arrow-layer
     s @goto_numbers_on_arrowlayer_o
     d @goto_symbols_on_arrowlayer_e
@@ -341,7 +326,6 @@
     k @goto_symbols_on_arrowlayer_t
     l @goto_numbers_on_arrowlayer_n
     ; @s-mod-arrow-layer
-    ' @switch-number-layer
 
     __ nop0
 )
@@ -355,7 +339,6 @@
     [ bspc 
     ] esc
 
-    caps @switch-symbol-layer
     a @goto_arrows_on_fnlayer_a
     s @goto_numbers_on_fnlayer_o
     d @goto_symbols_on_fnlayer_e
@@ -368,13 +351,11 @@
     k @goto_symbols_on_fnlayer_t
     l goto_numbers_on_fnlayer_n
     ; @goto_arrows_on_fnlayer_s
-    ' @switch-number-layer
 
     c prev
     v pp
     n dnd
     m next
-    rshift @switch-arrow-layer
 
     __ nop0
 )
