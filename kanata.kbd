@@ -303,16 +303,16 @@
     \ @switch-fn-layer
 
     caps @switch-symbol-layer
-    a @a-mod-number-layer
+    a @goto_arrows_on_numlayer_a
     s @o-mod-number-layer
-    d @e-mod-number-layer
-    f @u-mod-number-layer
-    g 5
-    h 6
-    j @h-mod-number-layer
-    k @t-mod-number-layer
+    d @goto_symbols_on_numlayer_e
+    f @goto_base_on_numlayer_u
+    g @goto_base_on_numlayer_i
+    h @goto_base_on_numlayer_d
+    j @goto_base_on_numlayer_h
+    k @goto_symbols_on_numlayer_t
     l @n-mod-number-layer
-    ; @s-mod-number-layer
+    ; @goto_arrows_on_numlayer_s
 
     rshift @switch-arrow-layer
 
