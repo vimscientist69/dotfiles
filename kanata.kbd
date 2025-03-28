@@ -330,16 +330,16 @@
 
     caps @switch-symbol-layer
     a @a-mod-arrow-layer
-    s @o-mod-arrow-layer
-    d @e-mod-arrow-layer
-    f @u-mod-arrow-layer
+    s @goto_numbers_on_arrowlayer_o
+    d @goto_symbols_on_arrowlayer_e
+    f @goto_base_on_arrowlayer_u
 
-    g home
-    h end
+    g @goto_fn_on_arrowlayer_i
+    h @goto_fn_on_arrowlayer_d
 
-    j @h-mod-arrow-layer
-    k @t-mod-arrow-layer
-    l @n-mod-arrow-layer
+    j @goto_base_on_arrowlayer_h
+    k @goto_symbols_on_arrowlayer_t
+    l @goto_numbers_on_arrowlayer_n
     ; @s-mod-arrow-layer
     ' @switch-number-layer
 
