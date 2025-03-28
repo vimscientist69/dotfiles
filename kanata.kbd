@@ -5,7 +5,7 @@
 (defvar
    tap-time 200 
    hold-time 200 
-   long-hold-time 300 
+   long-hold-time 200 
 )
 
 (deflocalkeys-macos
@@ -41,10 +41,10 @@
 
     a-mod-symbol-layer (tap-hold $tap-time $long-hold-time + lctrl)
     o-mod-symbol-layer (tap-hold $tap-time $long-hold-time [ lalt)
-    e-mod-symbol-layer (tap-hold $tap-time $hold-time { lmeta)
+    e-mod-symbol-layer (tap-hold $tap-time $hold-time S-[ lmeta)
     u-mod-symbol-layer (tap-hold $tap-time $hold-time S-9 lsft)
     h-mod-symbol-layer (tap-hold $tap-time $hold-time S-0 rsft)
-    t-mod-symbol-layer (tap-hold $tap-time $hold-time } rmeta)
+    t-mod-symbol-layer (tap-hold $tap-time $hold-time S-] rmeta)
     n-mod-symbol-layer (tap-hold $tap-time $long-hold-time ] ralt)
     s-mod-symbol-layer (tap-hold $tap-time $long-hold-time S-8 rctrl)
 
@@ -76,57 +76,57 @@
     s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
 
     ;; baselayer
-    goto_symbols_on_baselayer_e chord (chord baselayer_switch_layers d)
-    goto_symbols_on_baselayer_t chord (chord baselayer_switch_layers k)
-    goto_numbers_on_baselayer_o chord (chord baselayer_switch_layers s)
-    goto_numbers_on_baselayer_n chord (chord baselayer_switch_layers l)
-    goto_arrows_on_baselayer_a chord (chord baselayer_switch_layers a)
-    goto_arrows_on_baselayer_s chord (chord baselayer_switch_layers ;)
-    goto_fn_on_baselayer_i chord (chord baselayer_switch_layers g)
-    goto_fn_on_baselayer_d chord (chord baselayer_switch_layers h)
+    goto_symbols_on_baselayer_e (chord baselayer_switch_layers d)
+    goto_symbols_on_baselayer_t (chord baselayer_switch_layers k)
+    goto_numbers_on_baselayer_o (chord baselayer_switch_layers s)
+    goto_numbers_on_baselayer_n (chord baselayer_switch_layers l)
+    goto_arrows_on_baselayer_a (chord baselayer_switch_layers a)
+    goto_arrows_on_baselayer_s (chord baselayer_switch_layers ;)
+    goto_fn_on_baselayer_i (chord baselayer_switch_layers g)
+    goto_fn_on_baselayer_d (chord baselayer_switch_layers h)
 
     ;; symbols layer
-    goto_base_on_symlayer_u chord (chord symlayer_switch_layers f)
-    goto_base_on_symlayer_h chord (chord symlayer_switch_layers j)
-    goto_numbers_on_symlayer_o chord (chord symlayer_switch_layers s)
-    goto_numbers_on_symlayer_n chord (chord symlayer_switch_layers l)
-    goto_arrows_on_symlayer_a chord (chord symlayer_switch_layers a)
-    goto_arrows_on_symlayer_s chord (chord symlayer_switch_layers ;)
-    goto_fn_on_symlayer_i chord (chord symlayer_switch_layers g)
-    goto_fn_on_symlayer_d chord (chord symlayer_switch_layers h)
+    goto_base_on_symlayer_u (chord symlayer_switch_layers f)
+    goto_base_on_symlayer_h (chord symlayer_switch_layers j)
+    goto_numbers_on_symlayer_o (chord symlayer_switch_layers s)
+    goto_numbers_on_symlayer_n (chord symlayer_switch_layers l)
+    goto_arrows_on_symlayer_a (chord symlayer_switch_layers a)
+    goto_arrows_on_symlayer_s (chord symlayer_switch_layers ;)
+    goto_fn_on_symlayer_i (chord symlayer_switch_layers g)
+    goto_fn_on_symlayer_d (chord symlayer_switch_layers h)
 
     ;; number layer
-    goto_base_on_numlayer_u chord (chord numlayer_switch_layers f)
-    goto_base_on_numlayer_h chord (chord numlayer_switch_layers j)
-    goto_symbols_on_numlayer_e chord (chord numlayer_switch_layers d)
-    goto_symbols_on_numlayer_t chord (chord numlayer_switch_layers k)
-    goto_arrows_on_numlayer_a chord (chord numlayer_switch_layers a)
-    goto_arrows_on_numlayer_s chord (chord numlayer_switch_layers ;)
-    goto_fn_on_numlayer_i chord (chord numlayer_switch_layers g)
-    goto_fn_on_numlayer_d chord (chord numlayer_switch_layers h)
+    goto_base_on_numlayer_u (chord numlayer_switch_layers f)
+    goto_base_on_numlayer_h (chord numlayer_switch_layers j)
+    goto_symbols_on_numlayer_e (chord numlayer_switch_layers d)
+    goto_symbols_on_numlayer_t (chord numlayer_switch_layers k)
+    goto_arrows_on_numlayer_a (chord numlayer_switch_layers a)
+    goto_arrows_on_numlayer_s (chord numlayer_switch_layers ;)
+    goto_fn_on_numlayer_i (chord numlayer_switch_layers g)
+    goto_fn_on_numlayer_d (chord numlayer_switch_layers h)
 
     ;; arrow layer
-    goto_base_on_arrowlayer_u chord (chord arrowlayer_switch_layers f)
-    goto_base_on_arrowlayer_h chord (chord arrowlayer_switch_layers j)
-    goto_symbols_on_arrowlayer_e chord (chord arrowlayer_switch_layers d)
-    goto_symbols_on_arrowlayer_t chord (chord arrowlayer_switch_layers k)
-    goto_numbers_on_arrowlayer_o chord (chord arrowlayer_switch_layers s)
-    goto_numbers_on_arrowlayer_n chord (chord arrowlayer_switch_layers l)
-    goto_fn_on_arrowlayer_i chord (chord arrowlayer_switch_layers g)
-    goto_fn_on_arrowlayer_d chord (chord arrowlayer_switch_layers h)
+    goto_base_on_arrowlayer_u (chord arrowlayer_switch_layers f)
+    goto_base_on_arrowlayer_h (chord arrowlayer_switch_layers j)
+    goto_symbols_on_arrowlayer_e (chord arrowlayer_switch_layers d)
+    goto_symbols_on_arrowlayer_t (chord arrowlayer_switch_layers k)
+    goto_numbers_on_arrowlayer_o (chord arrowlayer_switch_layers s)
+    goto_numbers_on_arrowlayer_n (chord arrowlayer_switch_layers l)
+    goto_fn_on_arrowlayer_i (chord arrowlayer_switch_layers g)
+    goto_fn_on_arrowlayer_d (chord arrowlayer_switch_layers h)
 
     ;; fn layer
-    goto_base_on_fnlayer_u chord (chord fnlayer_switch_layers f)
-    goto_base_on_fnlayer_h chord (chord fnlayer_switch_layers j)
-    goto_symbols_on_fnlayer_e chord (chord fnlayer_switch_layers d)
-    goto_symbols_on_fnlayer_t chord (chord fnlayer_switch_layers k)
-    goto_numbers_on_fnlayer_o chord (chord fnlayer_switch_layers s)
-    goto_numbers_on_fnlayer_n chord (chord fnlayer_switch_layers l)
-    goto_arrows_on_fnlayer_a chord (chord fnlayer_switch_layers a)
-    goto_arrows_on_fnlayer_s chord (chord fnlayer_switch_layers ;)
+    goto_base_on_fnlayer_u (chord fnlayer_switch_layers f)
+    goto_base_on_fnlayer_h (chord fnlayer_switch_layers j)
+    goto_symbols_on_fnlayer_e (chord fnlayer_switch_layers d)
+    goto_symbols_on_fnlayer_t (chord fnlayer_switch_layers k)
+    goto_numbers_on_fnlayer_o (chord fnlayer_switch_layers s)
+    goto_numbers_on_fnlayer_n (chord fnlayer_switch_layers l)
+    goto_arrows_on_fnlayer_a (chord fnlayer_switch_layers a)
+    goto_arrows_on_fnlayer_s (chord fnlayer_switch_layers ;)
 )
 
-(defchords baselayer_switch_layers 30
+(defchords baselayer_switch_layers 50
     (d  ) @e-mod
     (  k) @t-mod
     (d k) @switch-symbol-layer
@@ -144,7 +144,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords symlayer_switch_layers 30
+(defchords symlayer_switch_layers 50
     (f  ) @u-mod-symbol-layer
     (  j) @h-mod-symbol-layer
     (f j) @switch-base-layer
@@ -162,7 +162,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords numlayer_switch_layers 30
+(defchords numlayer_switch_layers 50
     (f  ) @u-mod-number-layer
     (  j) @h-mod-number-layer
     (f j) @switch-base-layer
@@ -180,7 +180,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords arrowlayer_switch_layers 30
+(defchords arrowlayer_switch_layers 60
     (f  ) @u-mod-arrow-layer
     (  j) @h-mod-arrow-layer
     (f j) @switch-base-layer
@@ -198,7 +198,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords fnlayer_switch_layers 30
+(defchords fnlayer_switch_layers 60
     (f  ) @u-mod-fn-layer
     (  j) @h-mod-fn-layer
     (f j) @switch-base-layer
@@ -336,8 +336,8 @@
 )
 
 (deflayermap (fn-layer)
-    e brup
-    r brdown
+    e brdown
+    r brup
     t mute
     u volu
     i voldwn
@@ -354,7 +354,7 @@
 
     j @goto_base_on_fnlayer_h
     k @goto_symbols_on_fnlayer_t
-    l goto_numbers_on_fnlayer_n
+    l @goto_numbers_on_fnlayer_n
     ; @goto_arrows_on_fnlayer_s
 
     c prev
