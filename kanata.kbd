@@ -12,8 +12,25 @@
   dnd 251
 )
 
+(defsrc
+    tab
+    ret
+    lshift
+    m
+    spc
+)
+
 ;; Home row modifiers
 (defalias
+    meh (multi ctl alt sft)
+    tmeh (tap-hold $tap-time $hold-time spc @meh)
+
+    switch-symbol-layer (layer-switch symbol-layer)
+    switch-number-layer (layer-switch number-layer)
+    switch-fn-layer (layer-switch fn-layer)
+    switch-arrow-layer (layer-switch arrow-layer)
+    switch-base-layer (layer-switch base)
+
     a-mod (tap-hold $tap-time $long-hold-time a lctrl)
     o-mod (tap-hold $tap-time $long-hold-time o lalt)
     e-mod (tap-hold $tap-time $hold-time e lmeta)
@@ -59,20 +76,89 @@
     n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 ralt)
     s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
 
-    switch-symbol-layer (layer-switch symbol-layer)
-    switch-number-layer (layer-switch number-layer)
-    switch-fn-layer (layer-switch fn-layer)
-    switch-arrow-layer (layer-switch arrow-layer)
-    switch-base-layer (layer-switch base)
+    ;; sym layer
+    goto_base_on_symlayer_u chord (chord symlayer_switch_layers f)
+    goto_base_on_symlayer_h chord (chord symlayer_switch_layers j)
+    goto_numbers_on_symlayer_o chord (chord symlayer_switch_layers s)
+    goto_numbers_on_symlayer_n chord (chord symlayer_switch_layers l)
+    goto_arrows_on_symlayer_a chord (chord symlayer_switch_layers a)
+    goto_arrows_on_symlayer_s chord (chord symlayer_switch_layers ;)
+    goto_fn_on_symlayer_i chord (chord symlayer_switch_layers g)
+    goto_fn_on_symlayer_d chord (chord symlayer_switch_layers h)
 
+    ;; baselayer
+    goto_symbols_on_baselayer_e chord (chord baselayer_switch_layers d)
+    goto_symbols_on_baselayer_t chord (chord baselayer_switch_layers k)
+    goto_numbers_on_baselayer_o chord (chord baselayer_switch_layers s)
+    goto_numbers_on_baselayer_n chord (chord baselayer_switch_layers l)
+    goto_arrows_on_baselayer_a chord (chord baselayer_switch_layers a)
+    goto_arrows_on_baselayer_s chord (chord baselayer_switch_layers ;)
+    goto_fn_on_baselayer_i chord (chord baselayer_switch_layers g)
+    goto_fn_on_baselayer_d chord (chord baselayer_switch_layers h)
+
+    ;; number layer
+    goto_base_on_numlayer_u chord (chord numlayer_switch_layers f)
+    goto_base_on_numlayer_h chord (chord numlayer_switch_layers j)
+    goto_symbols_on_numlayer_e chord (chord numlayer_switch_layers d)
+    goto_symbols_on_numlayer_t chord (chord numlayer_switch_layers k)
+    goto_arrows_on_numlayer_a chord (chord numlayer_switch_layers a)
+    goto_arrows_on_numlayer_s chord (chord numlayer_switch_layers ;)
+    goto_fn_on_numlayer_i chord (chord numlayer_switch_layers g)
+    goto_fn_on_numlayer_d chord (chord numlayer_switch_layers h)
 )
 
-(defsrc
-    tab
-    ret
-    lshift
-    m
-    spc
+(defchords numlayer_switch_layers 15
+    (f  ) @u-mod-number-layer
+    (  j) @h-mod-number-layer
+    (f j) @switch-base-layer
+
+    (d  ) @e-mod-number-layer
+    (  k) @t-mod-number-layer
+    (d k) @switch-symbol-layer
+
+    (a  ) @a-mod-number-layer
+    (  ;) @s-mod-number-layer
+    (a ;) @switch-arrow-layer
+
+    (g  ) 5
+    (  h) 6
+    (g h) @switch-fn-layer
+)
+
+(defchords baselayer_switch_layers 15
+    (d  ) @e-mod
+    (  k) @t-mod
+    (d k) @switch-symbol-layer
+
+    (s  ) @o-mod
+    (  l) @n-mod
+    (s l) @switch-number-layer
+
+    (a  ) @a-mod
+    (  ;) @s-mod
+    (a ;) @switch-arrow-layer
+
+    (g  ) i
+    (  h) d
+    (g h) @switch-fn-layer
+)
+
+(defchords symlayer_switch_layers 15
+    (f  ) @u-mod-symbol-layer
+    (  j) @h-mod-symbol-layer
+    (f j) @switch-base-layer
+
+    (s  ) @o-mod-symbol-layer
+    (  l) @n-mod-symbol-layer
+    (s l) @switch-number-layer
+
+    (a  ) @a-mod-symbol-layer
+    (  ;) @s-mod-symbol-layer
+    (a ;) @switch-arrow-layer
+
+    (g  ) S-7
+    (  h) =
+    (g h) @switch-fn-layer
 )
 
 (deflayermap (base)
