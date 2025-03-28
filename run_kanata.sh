@@ -4,6 +4,7 @@
 KANATA_SCRIPT="/usr/local/bin/wait_for_karabiner.sh"
 KANATA_PATH="/Users/williamferns/.local/bin/kanata_macos_arm64"
 KARABINER_VIRTUALHIDDEVICE_DAEMON="/Library/Application Support/org.pqrs/Karabiner-DriverKit-VirtualHIDDevice/Applications/Karabiner-VirtualHIDDevice-Daemon.app/Contents/MacOS/Karabiner-VirtualHIDDevice-Daemon"
+KANATA_CONFIG_FILE=/Users/williamferns/.config/kanata.kbd
 SUDOERS_FILE="/etc/sudoers.d/kanata"
 PLIST_FILE="/Library/LaunchDaemons/com.williamferns.kanata.plist"
 KARABINER_PLIST_FILE="/Library/LaunchDaemons/com.williamferns.karabiner_virtualhiddevice_daemon.plist"
@@ -11,8 +12,9 @@ KARABINER_PLIST_FILE="/Library/LaunchDaemons/com.williamferns.karabiner_virtualh
 sudo launchctl remove com.williamferns.kanata
 sudo launchctl remove com.williamferns.karabiner_virtualhiddevice_daemon
 
-sudo rm -rf $KANATA_SCRIPT $PLIST_FILE $KARABINER_PLIST_FILE $SUDOERS_FILE
+sudo rm -rf $KANATA_SCRIPT $PLIST_FILE $KARABINER_PLIST_FILE $SUDOERS_FILE $KANATA_CONFIG_FILE
 sudo cp ./wait_for_karabiner.sh $KANATA_SCRIPT
+sudo cp ./kanata.kbd $KANATA_CONFIG_FILE
 sudo chmod +x $KANATA_SCRIPT
 
 # Create a sudoers file entry for kanata
