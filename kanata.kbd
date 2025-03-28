@@ -5,64 +5,68 @@
 (defvar
    tap-time 200 
    hold-time 200 
+   long-hold-time 300 
 )
 
+(deflocalkeys-macos
+  dnd 251
+)
 
 ;; Home row modifiers
 (defalias
-    a-mod (tap-hold $tap-time $hold-time a lctrl)
-    o-mod (tap-hold $tap-time $hold-time o lalt)
+    a-mod (tap-hold $tap-time $long-hold-time a lctrl)
+    o-mod (tap-hold $tap-time $long-hold-time o lalt)
     e-mod (tap-hold $tap-time $hold-time e lmeta)
     u-mod (tap-hold $tap-time $hold-time u lsft)
     h-mod (tap-hold $tap-time $hold-time h rsft)
     t-mod (tap-hold $tap-time $hold-time t rmeta)
-    n-mod (tap-hold $tap-time $hold-time n ralt)
-    s-mod (tap-hold $tap-time $hold-time s rctrl)
+    n-mod (tap-hold $tap-time $long-hold-time n ralt)
+    s-mod (tap-hold $tap-time $long-hold-time s rctrl)
 
-    a-mod-symbol-layer (tap-hold $tap-time $hold-time + lctrl)
-    o-mod-symbol-layer (tap-hold $tap-time $hold-time [ lalt)
+    a-mod-symbol-layer (tap-hold $tap-time $long-hold-time + lctrl)
+    o-mod-symbol-layer (tap-hold $tap-time $long-hold-time [ lalt)
     e-mod-symbol-layer (tap-hold $tap-time $hold-time { lmeta)
-    u-mod-symbol-layer (tap-hold $tap-time $hold-time ( lsft)
-    h-mod-symbol-layer (tap-hold $tap-time $hold-time ) rsft)
+    u-mod-symbol-layer (tap-hold $tap-time $hold-time S-9 lsft)
+    h-mod-symbol-layer (tap-hold $tap-time $hold-time S-0 rsft)
     t-mod-symbol-layer (tap-hold $tap-time $hold-time } rmeta)
-    n-mod-symbol-layer (tap-hold $tap-time $hold-time ] ralt)
-    s-mod-symbol-layer (tap-hold $tap-time $hold-time * rctrl)
+    n-mod-symbol-layer (tap-hold $tap-time $long-hold-time ] ralt)
+    s-mod-symbol-layer (tap-hold $tap-time $long-hold-time S-8 rctrl)
 
-    a-mod-number-layer (tap-hold $tap-time $hold-time 1 lctrl)
-    o-mod-number-layer (tap-hold $tap-time $hold-time 2 lalt)
+    a-mod-number-layer (tap-hold $tap-time $long-hold-time 1 lctrl)
+    o-mod-number-layer (tap-hold $tap-time $long-hold-time 2 lalt)
     e-mod-number-layer (tap-hold $tap-time $hold-time 3 lmeta)
     u-mod-number-layer (tap-hold $tap-time $hold-time 4 lsft)
     h-mod-number-layer (tap-hold $tap-time $hold-time 7 rsft)
     t-mod-number-layer (tap-hold $tap-time $hold-time 8 rmeta)
-    n-mod-number-layer (tap-hold $tap-time $hold-time 9 ralt)
-    s-mod-number-layer (tap-hold $tap-time $hold-time 0 rctrl)
+    n-mod-number-layer (tap-hold $tap-time $long-hold-time 9 ralt)
+    s-mod-number-layer (tap-hold $tap-time $long-hold-time 0 rctrl)
 
-    a-mod-arrow-layer (tap-hold $tap-time $hold-time del lctrl)
-    o-mod-arrow-layer (tap-hold $tap-time $hold-time pgup lalt)
+    a-mod-arrow-layer (tap-hold $tap-time $long-hold-time del lctrl)
+    o-mod-arrow-layer (tap-hold $tap-time $long-hold-time pgup lalt)
     e-mod-arrow-layer (tap-hold $tap-time $hold-time down lmeta)
     u-mod-arrow-layer (tap-hold $tap-time $hold-time up lsft)
     h-mod-arrow-layer (tap-hold $tap-time $hold-time left rsft)
-    t-mod-arrow-layer (tap-hold $tap-time $hold-tgme rght rmeta)
-    n-mod-arrow-layer (tap-hold $tap-tgme $hold-time pgdn ralt)
-    s-mod-arrow-layer (tap-hold $tap-time $hold-time insert rctrl)
+    t-mod-arrow-layer (tap-hold $tap-time $hold-time rght rmeta)
+    n-mod-arrow-layer (tap-hold $tap-time $long-hold-time pgdn ralt)
+    s-mod-arrow-layer (tap-hold $tap-time $long-hold-time ins rctrl)
 
-    a-mod-fn-layer (tap-hold $tap-time $hold-time f1 lctrl)
-    o-mod-fn-layer (tap-hold $tap-time $hold-time f2 lalt)
+    a-mod-fn-layer (tap-hold $tap-time $long-hold-time f1 lctrl)
+    o-mod-fn-layer (tap-hold $tap-time $long-hold-time f2 lalt)
     e-mod-fn-layer (tap-hold $tap-time $hold-time f3 lmeta)
     u-mod-fn-layer (tap-hold $tap-time $hold-time f4 lsft)
     h-mod-fn-layer (tap-hold $tap-time $hold-time f7 rsft)
-    t-mod-fn-layer (tap-hold $tap-time $hold-tgme f8 rmeta)
-    n-mod-fn-layer (tap-hold $tap-tgme $hold-time f9 ralt)
-    s-mod-fn-layer (tap-hold $tap-time $hold-time f10 rctrl)
+    t-mod-fn-layer (tap-hold $tap-time $hold-time f8 rmeta)
+    n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 ralt)
+    s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
 
     switch-symbol-layer (layer-switch symbol-layer)
     switch-number-layer (layer-switch number-layer)
     switch-fn-layer (layer-switch fn-layer)
     switch-arrow-layer (layer-switch arrow-layer)
     switch-base-layer (layer-switch base)
+
 )
 
-; keys that stay the same
 (defsrc
     tab
     ret
@@ -115,20 +119,20 @@
 
 (deflayermap (symbol-layer)
     w -
-    e !
-    r |
+    e S-1
+    r S-\
     u /
-    i @
-    o _
+    i S-2
+    o S--
     [ bspc 
     ] esc
-    \ @switch-fn-layer
 
+    \ @switch-fn-layer
     a @a-mod-symbol-layer
     s @o-mod-symbol-layer
     d @e-mod-symbol-layer
     f @u-mod-symbol-layer
-    g &
+    g S-7
     h =
     j @h-mod-symbol-layer
     k @t-mod-symbol-layer
@@ -137,20 +141,19 @@
     ' @switch-number-layer
 
     c \
-    v ?
-    n ^
-    m #
+    v S-/
+    n S-6
+    m S-3
     rshift @switch-arrow-layer
 
-    RS-spc @switch-base-layer
     __ nop0
 )
 
 (deflayermap (number-layer)
-    e $
-    r ~
+    e S-4
+    r S-`
     u `
-    i %
+    i S-5
     [ bspc 
     ] esc
     \ @switch-fn-layer
@@ -169,15 +172,10 @@
 
     rshift @switch-arrow-layer
 
-    RS-spc @switch-base-layer
     __ nop0
 )
 
 (deflayermap (arrow-layer)
-    e $
-    r ~
-    u `
-    i %
     [ bspc 
     ] esc
     \ @switch-fn-layer
@@ -195,14 +193,13 @@
     ; @s-mod-arrow-layer
     ' @switch-number-layer
 
-    RS-spc @switch-base-layer
     __ nop0
 )
 
 (deflayermap (fn-layer)
     e brup
     r brdown
-    r mute
+    t mute
     u volu
     i voldwn
     [ bspc 
@@ -227,6 +224,5 @@
     m next
     rshift @switch-arrow-layer
 
-    RS-spc @switch-base-layer
     __ nop0
 )
