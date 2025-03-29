@@ -82,30 +82,70 @@
     h_bl (chord baselayer_switch_layers j)
     e_bl (chord baselayer_switch_layers d)
     t_bl (chord baselayer_switch_layers k)
+    i_bl (chord baselayer_return g)
+    d_bl (chord baselayer_return h)
 
     ;; symbols layer
     u_sl (chord symlayer_switch_layers f)
     h_sl (chord symlayer_switch_layers j)
     e_sl (chord symlayer_switch_layers d)
     t_sl (chord symlayer_switch_layers k)
+    i_sl (chord symlayer_return g)
+    d_sl (chord symlayer_return h)
 
     ;; number layer
     u_nl (chord numlayer_switch_layers f)
     h_nl (chord numlayer_switch_layers j)
     e_nl (chord numlayer_switch_layers d)
     t_nl (chord numlayer_switch_layers k)
+    i_nl (chord numlayer_return g)
+    d_nl (chord numlayer_return h)
 
     ;; arrow layer
     u_al (chord arrowlayer_switch_layers f)
     h_al (chord arrowlayer_switch_layers j)
     e_al (chord arrowlayer_switch_layers d)
     t_al (chord arrowlayer_switch_layers k)
+    i_al (chord arrowlayer_return g)
+    d_al (chord arrowlayer_return h)
 
     ;; fn layer
     u_fnl (chord fnlayer_switch_layers f)
     h_fnl (chord fnlayer_switch_layers j)
     e_fnl (chord fnlayer_switch_layers d)
     t_fnl (chord fnlayer_switch_layers k)
+    i_fnl (chord fnlayer_return g)
+    d_fnl (chord fnlayer_return h)
+)
+
+(defchords baselayer_return 30
+    (g  ) i
+    (  h) d
+    (g h) ret
+)
+
+(defchords symlayer_return 30
+    (g  ) S-7
+    (  h) =
+    (g h) ret
+)
+
+(defchords numlayer_return 30
+    (g  ) 5
+    (  h) 6
+    (g h) ret
+)
+
+(defchords arrowlayer_return 30
+    (g  ) home
+    (  h) end
+    (g h) ret
+)
+
+(defchords fnlayer_return 30
+    (g  ) f6
+    (  h) f7
+    (g h) ret
 )
 
 (defchords baselayer_switch_layers 30
