@@ -108,7 +108,7 @@
     t_fnl (chord fnlayer_switch_layers k)
 )
 
-(defchords baselayer_switch_layers 15
+(defchords baselayer_switch_layers 30
     (d      ) @e-mod
     (  f    ) @u-mod
     (    j  ) @h-mod
@@ -119,7 +119,7 @@
     (d f j k) @switch-fn-layer
 )
 
-(defchords symlayer_switch_layers 15
+(defchords symlayer_switch_layers 30
     (d      ) @e-mod-symbol-layer
     (  f    ) @u-mod-symbol-layer
     (    j  ) @h-mod-symbol-layer
@@ -130,7 +130,7 @@
     (d f j k) @switch-fn-layer
 )
 
-(defchords numlayer_switch_layers 15
+(defchords numlayer_switch_layers 30
     (d      ) @e-mod-number-layer
     (  f    ) @u-mod-number-layer
     (    j  ) @h-mod-number-layer
@@ -141,7 +141,7 @@
     (d f j k) @switch-fn-layer
 )
 
-(defchords arrowlayer_switch_layers 15
+(defchords arrowlayer_switch_layers 30
     (d      ) @e-mod-arrow-layer
     (  f    ) @u-mod-arrow-layer
     (    j  ) @h-mod-arrow-layer
@@ -152,7 +152,7 @@
     (d f j k) @switch-fn-layer
 )
 
-(defchords fnlayer_switch_layers 15
+(defchords fnlayer_switch_layers 30
     (d      ) @e-mod-fn-layer
     (  f    ) @u-mod-fn-layer
     (    j  ) @h-mod-fn-layer
@@ -220,8 +220,7 @@
 
     g S-7
     h =
-
-    j @u_sl
+    j @h_sl
     k @t_sl
     l @n-mod-symbol-layer
     ; @s-mod-symbol-layer
