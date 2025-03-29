@@ -31,7 +31,7 @@ accordion-padding = 0
 
 # Possible values: (qwerty|dvorak)
 # See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
-key-mapping.preset = 'dvorak'
+key-mapping.preset = 'qwerty'
 
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
@@ -130,28 +130,3 @@ shift-space = 'mode main'
 
 [mode.empty.binding]
 shift-space = 'mode main'
-
-# [mode.workspaces.binding]
-# a = 'workspace 1'
-# o = 'workspace 2'
-# e = 'workspace 3'
-# u = 'workspace 4'
-# j = 'workspace 5'
-# d = 'workspace 6'
-# h = 'workspace 7'
-# t = 'workspace 8'
-# n = 'workspace 9'
-# g = 'workspace 10'
-#
-# shift-a = 'move-node-to-workspace 1'
-# shift-o = 'move-node-to-workspace 2'
-# shift-e = 'move-node-to-workspace 3'
-# shift-u = 'move-node-to-workspace 4'
-# shift-j = 'move-node-to-workspace 5'
-# shift-d = 'move-node-to-workspace 6'
-# shift-h = 'move-node-to-workspace 7'
-# shift-t = 'move-node-to-workspace 8'
-# shift-n = 'move-node-to-workspace 9'
-# shift-g = 'move-node-to-workspace 10'
-#
-# shift-space = 'mode main'

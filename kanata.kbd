@@ -1,3 +1,6 @@
+;; TODO: make a layer to navigate between windows more easily. Activate this layer by holding in 
+;; space for more than 200 miliseconds. home row keys will then turn into alt-number keys, to navigate my tiling window manager.
+
 (defcfg
     process-unmapped-keys yes
 )
@@ -21,14 +24,13 @@
 
 ;; Home row modifiers
 (defalias
-    meh (multi ctl alt sft)
-    tmeh (tap-hold $tap-time $hold-time spc @meh)
-
     switch-symbol-layer (layer-switch symbol-layer)
     switch-number-layer (layer-switch number-layer)
     switch-fn-layer (layer-switch fn-layer)
     switch-arrow-layer (layer-switch arrow-layer)
     switch-base-layer (layer-switch base)
+    switch-aerospace-layer-temp (layer-toggle aerospace-layer)
+    toggle-aerospace-layer (tap-hold $tap-time $hold-time spc @switch-aerospace-layer-temp)
 
     a-mod (tap-hold $tap-time $long-hold-time a lctrl)
     o-mod (tap-hold $tap-time $long-hold-time o lalt)
@@ -126,7 +128,7 @@
     goto_arrows_on_fnlayer_s (chord fnlayer_switch_layers ;)
 )
 
-(defchords baselayer_switch_layers 50
+(defchords baselayer_switch_layers 35
     (d  ) @e-mod
     (  k) @t-mod
     (d k) @switch-symbol-layer
@@ -144,7 +146,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords symlayer_switch_layers 50
+(defchords symlayer_switch_layers 35
     (f  ) @u-mod-symbol-layer
     (  j) @h-mod-symbol-layer
     (f j) @switch-base-layer
@@ -162,7 +164,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords numlayer_switch_layers 50
+(defchords numlayer_switch_layers 35
     (f  ) @u-mod-number-layer
     (  j) @h-mod-number-layer
     (f j) @switch-base-layer
@@ -180,7 +182,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords arrowlayer_switch_layers 60
+(defchords arrowlayer_switch_layers 40
     (f  ) @u-mod-arrow-layer
     (  j) @h-mod-arrow-layer
     (f j) @switch-base-layer
@@ -198,7 +200,7 @@
     (g h) @switch-fn-layer
 )
 
-(defchords fnlayer_switch_layers 60
+(defchords fnlayer_switch_layers 40
     (f  ) @u-mod-fn-layer
     (  j) @h-mod-fn-layer
     (f j) @switch-base-layer
@@ -254,7 +256,7 @@
     . v
     / z
 
-    spc @tmeh
+    spc @toggle-aerospace-layer
     __ nop0
 )
 
@@ -284,7 +286,7 @@
     n S-6
     m S-3
 
-    spc @tmeh
+    spc @toggle-aerospace-layer
     __ nop0
 )
 
@@ -309,7 +311,7 @@
     l @n-mod-number-layer
     ; @goto_arrows_on_numlayer_s
 
-    spc @tmeh
+    spc @toggle-aerospace-layer
     __ nop0
 )
 
@@ -331,7 +333,7 @@
     ; @s-mod-arrow-layer
 
 
-    spc @tmeh
+    spc @toggle-aerospace-layer
     __ nop0
 )
 
@@ -362,6 +364,23 @@
     n dnd
     m next
 
-    spc @tmeh
+    spc @toggle-aerospace-layer
+    __ nop0
+)
+
+(deflayermap (aerospace-layer)
+    a A-1
+    s A-2
+    d A-3
+    f A-4
+
+    g A-5
+    h A-6
+
+    j A-7
+    k A-8
+    l A-9
+    ; A-0
+
     __ nop0
 )
