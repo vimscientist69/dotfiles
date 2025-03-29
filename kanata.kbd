@@ -177,18 +177,18 @@
     [ bspc 
     ] esc
 
-    a @goto_arrows_on_baselayer_a
-    s @goto_numbers_on_baselayer_o
-    d @goto_symbols_on_baselayer_e
-    f @u-mod
+    a @a-mod
+    s @o-mod
+    d @e_bl
+    f @u_bl
+    
+    g i
+    h d
 
-    g @goto_fn_on_baselayer_i
-    h @goto_fn_on_baselayer_d
-
-    j @h-mod
-    k @goto_symbols_on_baselayer_t
-    l @goto_numbers_on_baselayer_n
-    ; @goto_arrows_on_baselayer_s
+    j @h_bl
+    k @t_bl
+    l @n-mod
+    ; @s-mod
     ' - 
 
     z '
@@ -213,18 +213,18 @@
     [ bspc 
     ] esc
 
-    a @goto_arrows_on_symlayer_a
-    s @goto_numbers_on_symlayer_o
-    d @e-mod-symbol-layer
-    f @goto_base_on_symlayer_u
+    a @a-mod-symbol-layer
+    s @o-mod-symbol-layer
+    d @e_sl
+    f @u_sl
 
-    g @goto_fn_on_symlayer_i
-    h @goto_fn_on_symlayer_d
+    g S-7
+    h =
 
-    j @goto_base_on_symlayer_h
-    k @t-mod-symbol-layer
-    l @goto_numbers_on_symlayer_n
-    ; @goto_arrows_on_symlayer_s
+    j @u_sl
+    k @t_sl
+    l @n-mod-symbol-layer
+    ; @s-mod-symbol-layer
 
     c \
     v S-/
