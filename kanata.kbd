@@ -102,10 +102,10 @@
     t_al (chord arrowlayer_switch_layers k)
 
     ;; fn layer
-    u_al (chord fnlayer_switch_layers f)
-    h_al (chord fnlayer_switch_layers j)
-    e_al (chord fnlayer_switch_layers d)
-    t_al (chord fnlayer_switch_layers k)
+    u_fnl (chord fnlayer_switch_layers f)
+    h_fnl (chord fnlayer_switch_layers j)
+    e_fnl (chord fnlayer_switch_layers d)
+    t_fnl (chord fnlayer_switch_layers k)
 )
 
 (defchords baselayer_switch_layers 15
@@ -243,18 +243,18 @@
     [ bspc 
     ] esc
 
-    a @goto_arrows_on_numlayer_a
+    a @a-mod-number-layer
     s @o-mod-number-layer
-    d @goto_symbols_on_numlayer_e
-    f @goto_base_on_numlayer_u
+    d @e_nl
+    f @u_nl
 
-    g @goto_fn_on_numlayer_i
-    h @goto_fn_on_numlayer_d
+    g 5
+    h 6
 
-    j @goto_base_on_numlayer_h
-    k @goto_symbols_on_numlayer_t
+    j @h_nl
+    k @t_nl
     l @n-mod-number-layer
-    ; @goto_arrows_on_numlayer_s
+    ; @s-mod-number-layer
 
     spc @toggle-aerospace-layer
     __ nop0
@@ -265,18 +265,17 @@
     ] esc
 
     a @a-mod-arrow-layer
-    s @goto_numbers_on_arrowlayer_o
-    d @goto_symbols_on_arrowlayer_e
-    f @goto_base_on_arrowlayer_u
+    s @o-mod-arrow-layer
+    d @e_al
+    f @u_al
 
-    g @goto_fn_on_arrowlayer_i
-    h @goto_fn_on_arrowlayer_d
+    g home
+    h end
 
-    j @goto_base_on_arrowlayer_h
-    k @goto_symbols_on_arrowlayer_t
-    l @goto_numbers_on_arrowlayer_n
+    j @h_al
+    k @t_al
+    l @n-mod-arrow-layer
     ; @s-mod-arrow-layer
-
 
     spc @toggle-aerospace-layer
     __ nop0
@@ -291,18 +290,18 @@
     [ bspc 
     ] esc
 
-    a @goto_arrows_on_fnlayer_a
-    s @goto_numbers_on_fnlayer_o
-    d @goto_symbols_on_fnlayer_e
-    f @goto_base_on_fnlayer_u
+    a @a-mod-fn-layer
+    s @o-mod-fn-layer
+    d @e_fnl
+    f @u_fnl
 
     g f5
     h f6
 
-    j @goto_base_on_fnlayer_h
-    k @goto_symbols_on_fnlayer_t
-    l @goto_numbers_on_fnlayer_n
-    ; @goto_arrows_on_fnlayer_s
+    j @h_fnl
+    k @t_fnl
+    l @n-mod-fn-layer
+    ; @s-mod-fn-layer
 
     c prev
     v pp
