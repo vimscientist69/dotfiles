@@ -1,5 +1,3 @@
-;; TODO: make a layer to navigate between windows more easily. Activate this layer by holding in 
-;; space for more than 200 miliseconds. home row keys will then turn into alt-number keys, to navigate my tiling window manager.
 
 (defcfg
     process-unmapped-keys yes
@@ -78,129 +76,14 @@
     s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
 
     ;; base layer
-    u_bl (chord baselayer_switch_layers f)
-    h_bl (chord baselayer_switch_layers j)
-    e_bl (chord baselayer_switch_layers d)
-    t_bl (chord baselayer_switch_layers k)
     i_bl (chord baselayer_return g)
     d_bl (chord baselayer_return h)
-
-    ;; symbols layer
-    u_sl (chord symlayer_switch_layers f)
-    h_sl (chord symlayer_switch_layers j)
-    e_sl (chord symlayer_switch_layers d)
-    t_sl (chord symlayer_switch_layers k)
-    i_sl (chord symlayer_return g)
-    d_sl (chord symlayer_return h)
-
-    ;; number layer
-    u_nl (chord numlayer_switch_layers f)
-    h_nl (chord numlayer_switch_layers j)
-    e_nl (chord numlayer_switch_layers d)
-    t_nl (chord numlayer_switch_layers k)
-    i_nl (chord numlayer_return g)
-    d_nl (chord numlayer_return h)
-
-    ;; arrow layer
-    u_al (chord arrowlayer_switch_layers f)
-    h_al (chord arrowlayer_switch_layers j)
-    e_al (chord arrowlayer_switch_layers d)
-    t_al (chord arrowlayer_switch_layers k)
-    i_al (chord arrowlayer_return g)
-    d_al (chord arrowlayer_return h)
-
-    ;; fn layer
-    u_fnl (chord fnlayer_switch_layers f)
-    h_fnl (chord fnlayer_switch_layers j)
-    e_fnl (chord fnlayer_switch_layers d)
-    t_fnl (chord fnlayer_switch_layers k)
-    i_fnl (chord fnlayer_return g)
-    d_fnl (chord fnlayer_return h)
 )
 
 (defchords baselayer_return 30
     (g  ) i
     (  h) d
     (g h) ret
-)
-
-(defchords symlayer_return 30
-    (g  ) S-7
-    (  h) =
-    (g h) ret
-)
-
-(defchords numlayer_return 30
-    (g  ) 5
-    (  h) 6
-    (g h) ret
-)
-
-(defchords arrowlayer_return 30
-    (g  ) home
-    (  h) end
-    (g h) ret
-)
-
-(defchords fnlayer_return 30
-    (g  ) f6
-    (  h) f7
-    (g h) ret
-)
-
-(defchords baselayer_switch_layers 30
-    (d      ) @e-mod
-    (  f    ) @u-mod
-    (    j  ) @h-mod
-    (      k) @t-mod
-    (d f    ) @switch-symbol-layer
-    (    j k) @switch-number-layer
-    (d     k) @switch-arrow-layer
-    (d f j k) @switch-fn-layer
-)
-
-(defchords symlayer_switch_layers 30
-    (d      ) @e-mod-symbol-layer
-    (  f    ) @u-mod-symbol-layer
-    (    j  ) @h-mod-symbol-layer
-    (      k) @t-mod-symbol-layer
-    (  f j  ) @switch-base-layer
-    (    j k) @switch-number-layer
-    (d     k) @switch-arrow-layer
-    (d f j k) @switch-fn-layer
-)
-
-(defchords numlayer_switch_layers 30
-    (d      ) @e-mod-number-layer
-    (  f    ) @u-mod-number-layer
-    (    j  ) @h-mod-number-layer
-    (      k) @t-mod-number-layer
-    (d f    ) @switch-symbol-layer
-    (  f j  ) @switch-base-layer
-    (d     k) @switch-arrow-layer
-    (d f j k) @switch-fn-layer
-)
-
-(defchords arrowlayer_switch_layers 30
-    (d      ) @e-mod-arrow-layer
-    (  f    ) @u-mod-arrow-layer
-    (    j  ) @h-mod-arrow-layer
-    (      k) @t-mod-arrow-layer
-    (d f    ) @switch-symbol-layer
-    (  f j  ) @switch-base-layer
-    (    j k) @switch-number-layer
-    (d f j k) @switch-fn-layer
-)
-
-(defchords fnlayer_switch_layers 30
-    (d      ) @e-mod-fn-layer
-    (  f    ) @u-mod-fn-layer
-    (    j  ) @h-mod-fn-layer
-    (      k) @t-mod-fn-layer
-    (d f    ) @switch-symbol-layer
-    (  f j  ) @switch-base-layer
-    (    j k) @switch-number-layer
-    (d     k) @switch-arrow-layer
 )
 
 (deflayermap (base)
@@ -219,14 +102,14 @@
 
     a @a-mod
     s @o-mod
-    d @e_bl
-    f @u_bl
+    d @e-mod
+    f @u-mod
     
-    g i
-    h d
+    g @i_bl
+    h @d_bl
 
-    j @h_bl
-    k @t_bl
+    j @h-mod
+    k @t-mod
     l @n-mod
     ; @s-mod
     ' - 
@@ -255,13 +138,14 @@
 
     a @a-mod-symbol-layer
     s @o-mod-symbol-layer
-    d @e_sl
-    f @u_sl
+    d @e-mod-symbol-layer
+    f @u-mod-symbol-layer
 
     g S-7
     h =
-    j @h_sl
-    k @t_sl
+
+    j @h-mod-symbol-layer
+    k @t-mod-symbol-layer
     l @n-mod-symbol-layer
     ; @s-mod-symbol-layer
 
@@ -284,14 +168,14 @@
 
     a @a-mod-number-layer
     s @o-mod-number-layer
-    d @e_nl
-    f @u_nl
+    d @e-mod-number-layer
+    f @u-mod-number-layer
 
     g 5
     h 6
 
-    j @h_nl
-    k @t_nl
+    j @h-mod-number-layer
+    k @t-mod-number-layer
     l @n-mod-number-layer
     ; @s-mod-number-layer
 
@@ -305,14 +189,14 @@
 
     a @a-mod-arrow-layer
     s @o-mod-arrow-layer
-    d @e_al
-    f @u_al
+    d @e-mod-arrow-layer
+    f @u-mod-arrow-layer
 
     g home
     h end
 
-    j @h_al
-    k @t_al
+    j @h-mod-arrow-layer
+    k @t-mod-arrow-layer
     l @n-mod-arrow-layer
     ; @s-mod-arrow-layer
 
@@ -331,14 +215,14 @@
 
     a @a-mod-fn-layer
     s @o-mod-fn-layer
-    d @e_fnl
-    f @u_fnl
+    d @e-mod-fn-layer
+    f @u-mod-fn-layer
 
-    g f5
+    g f6
     h f6
 
-    j @h_fnl
-    k @t_fnl
+    j @h-mod-fn-layer
+    k @t-mod-fn-layer
     l @n-mod-fn-layer
     ; @s-mod-fn-layer
 
