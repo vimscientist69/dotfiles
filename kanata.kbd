@@ -84,6 +84,16 @@
     h_bl (chord baselayer_homerow_mods_chords j)
     t_bl (chord baselayer_homerow_mods_chords k)
 
+    e_ssl (chord symswitchlayer_homerow_mods_chords d)
+    u_ssl (chord symswitchlayer_homerow_mods_chords f)
+    h_ssl (chord symswitchlayer_homerow_mods_chords j)
+    t_ssl (chord symswitchlayer_homerow_mods_chords k)
+
+    e_nsl (chord numswitchlayer_homerow_mods_chords d)
+    u_nsl (chord numswitchlayer_homerow_mods_chords f)
+    h_nsl (chord numswitchlayer_homerow_mods_chords j)
+    t_nsl (chord numswitchlayer_homerow_mods_chords k)
+
     ._bl (chord baselayer_swap_layers_chords e)
     p_bl (chord baselayer_swap_layers_chords r)
     g_bl (chord baselayer_swap_layers_chords u)
@@ -92,8 +102,6 @@
     i_sl (chord symlayer_backto_base g)
     d_sl (chord symlayer_backto_base h)
 
-    ;; TODO: create chords to press enter,
-    ;; escape and tab on switch num and sym layers (create neww layers just for that)
     i_nl (chord numlayer_backto_base g)
     d_nl (chord numlayer_backto_base h)
 )
@@ -125,10 +133,30 @@
     (g d) @switch-base-layer
 )
 
+(defchords symswitchlayer_homerow_mods_chords 30
+    (d      ) @e-mod-symbol-layer
+    (  f    ) @u-mod-symbol-layer
+    (d f    ) tab
+    (  f j  ) ret
+    (    j  ) @h-mod-symbol-layer
+    (    j k) esc
+    (      k) @t-mod-symbol-layer
+)
+
 (defchords numlayer_backto_base 30
     (g  ) 5
     (  d) 6
     (g d) @switch-base-layer
+)
+
+(defchords numswitchlayer_homerow_mods_chords 30
+    (d      ) @e-mod-number-layer
+    (  f    ) @u-mod-number-layer
+    (d f    ) tab
+    (  f j  ) ret
+    (    j  ) @h-mod-number-layer
+    (    j k) esc
+    (      k) @t-mod-number-layer
 )
 
 (deflayermap (base)
@@ -301,14 +329,14 @@
 
     a @a-mod-symbol-layer
     s @o-mod-symbol-layer
-    d @e-mod-symbol-layer
-    f @u-mod-symbol-layer
+    d @e_ssl
+    f @u_ssl
 
     g @i_sl
     h @d_sl
 
-    j @h-mod-symbol-layer
-    k @t-mod-symbol-layer
+    j @h_ssl
+    k @t_ssl
     l @n-mod-symbol-layer
     ; @s-mod-symbol-layer
 
@@ -329,14 +357,14 @@
 
     a @a-mod-number-layer
     s @o-mod-number-layer
-    d @e-mod-number-layer
-    f @u-mod-number-layer
+    d @e_nsl
+    f @u_nsl
 
     g @i_sl
     h @d_sl
 
-    j @h-mod-number-layer
-    k @t-mod-number-layer
+    j @h_nsl
+    k @t_nsl
     l @n-mod-number-layer
     ; @s-mod-number-layer
 
