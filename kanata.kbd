@@ -75,20 +75,25 @@
     n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 ralt)
     s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
 
-    u_bl (chord baselayer_return f)
-    h_bl (chord baselayer_return j)
+    e_bl (chord baselayer_homerow_chords d)
+    u_bl (chord baselayer_homerow_chords f)
+    h_bl (chord baselayer_homerow_chords j)
+    t_bl (chord baselayer_homerow_chords k)
 )
 
 (defsrc)
 
-(defchords baselayer_return 30
-    (f  ) @u-mod
-    (  j) @h-mod
-    (f j) ret
+(defchords baselayer_homerow_chords 30
+    (d      ) @e-mod
+    (  f    ) @u-mod
+    (d f    ) tab
+    (    j  ) @h-mod
+    (      k) @t-mod
+    (    j k) esc
+    (  f j  ) ret
 )
 
 (deflayermap (base)
-    tab tab 
     q @;-mod
     w @,-mod
     e @.-mod
@@ -100,18 +105,17 @@
     o @r-mod
     p @l-mod
     [ bspc 
-    ] esc
 
     a @a-mod
     s @o-mod
-    d @e-mod
+    d @e_bl
     f @u_bl
     
     g i
     h d
 
     j @h_bl
-    k @t-mod
+    k @t_bl
     l @n-mod
     ; @s-mod
     ' - 
@@ -137,7 +141,6 @@
     u /
     i S-2
     [ bspc 
-    ] esc
 
     a @a-mod-symbol-layer
     s @o-mod-symbol-layer
@@ -166,7 +169,6 @@
     u `
     i S-5
     [ bspc 
-    ] esc
 
     a @a-mod-number-layer
     s @o-mod-number-layer
@@ -186,7 +188,6 @@
 
 (deflayermap (arrow-layer)
     [ bspc 
-    ] esc
 
     a @a-mod-arrow-layer
     s @o-mod-arrow-layer
@@ -211,7 +212,6 @@
     u volu
     i voldwn
     [ bspc 
-    ] esc
 
     a @a-mod-fn-layer
     s @o-mod-fn-layer
