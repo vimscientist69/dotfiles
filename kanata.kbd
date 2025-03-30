@@ -13,12 +13,6 @@
   dnd 251
 )
 
-(defsrc
-    tab
-    ret
-    spc
-)
-
 ;; Home row modifiers
 (defalias
     toggle-symbol-layer (layer-toggle symbol-layer)
@@ -81,17 +75,20 @@
     n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 ralt)
     s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
 
-    i_bl (chord baselayer_return g)
-    d_bl (chord baselayer_return h)
+    u_bl (chord baselayer_return f)
+    h_bl (chord baselayer_return j)
 )
 
+(defsrc)
+
 (defchords baselayer_return 30
-    (g  ) i
-    (  h) d
-    (g h) ret
+    (f  ) @u-mod
+    (  j) @h-mod
+    (f j) ret
 )
 
 (deflayermap (base)
+    tab tab 
     q @;-mod
     w @,-mod
     e @.-mod
@@ -108,12 +105,12 @@
     a @a-mod
     s @o-mod
     d @e-mod
-    f @u-mod
+    f @u_bl
     
-    g @i_bl
-    h @d_bl
+    g i
+    h d
 
-    j @h-mod
+    j @h_bl
     k @t-mod
     l @n-mod
     ; @s-mod
@@ -160,7 +157,6 @@
     n S-6
     m S-3
 
-    spc @toggle-aerospace-layer
     __ nop0
 )
 
@@ -185,7 +181,6 @@
     l @n-mod-number-layer
     ; @s-mod-number-layer
 
-    spc @toggle-aerospace-layer
     __ nop0
 )
 
@@ -206,7 +201,6 @@
     l @n-mod-arrow-layer
     ; @s-mod-arrow-layer
 
-    spc @toggle-aerospace-layer
     __ nop0
 )
 
@@ -237,7 +231,6 @@
     n dnd
     m next
 
-    spc @toggle-aerospace-layer
     __ nop0
 )
 
