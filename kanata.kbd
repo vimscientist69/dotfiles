@@ -129,8 +129,8 @@
 
 (defchords symlayer_backto_base 30
     (g  ) S-7
-    (  d) =
-    (g d) @switch-base-layer
+    (  h) =
+    (g h) @switch-base-layer
 )
 
 (defchords symswitchlayer_homerow_mods_chords 30
@@ -145,8 +145,8 @@
 
 (defchords numlayer_backto_base 30
     (g  ) 5
-    (  d) 6
-    (g d) @switch-base-layer
+    (  h) 6
+    (g h) @switch-base-layer
 )
 
 (defchords numswitchlayer_homerow_mods_chords 30
@@ -345,6 +345,7 @@
     n S-6
     m S-3
 
+    spc @toggle-aerospace-layer
     __ nop0
 )
 
@@ -360,14 +361,15 @@
     d @e_nsl
     f @u_nsl
 
-    g @i_sl
-    h @d_sl
+    g @i_nl
+    h @d_nl
 
     j @h_nsl
     k @t_nsl
     l @n-mod-number-layer
     ; @s-mod-number-layer
 
+    spc @toggle-aerospace-layer
     __ nop0
 )
 
