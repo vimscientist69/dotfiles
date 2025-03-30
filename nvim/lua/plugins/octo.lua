@@ -261,7 +261,7 @@ return {
 				select_prev_entry = { lhs = "[q", desc = "move to previous changed file" },
 				select_first_entry = { lhs = "[Q", desc = "move to first changed file" },
 				select_last_entry = { lhs = "]Q", desc = "move to last changed file" },
-				close_review_tab = { lhs = "<leader><C-c>", desc = "close review tab" },
+				close_review_tab = { lhs = "<leader><Esc>", desc = "close review tab" },
 				react_hooray = { lhs = "<leader>rp", desc = "add/remove 🎉 reaction" },
 				react_heart = { lhs = "<leader>rh", desc = "add/remove ❤️ reaction" },
 				react_eyes = { lhs = "<leader>re", desc = "add/remove 👀 reaction" },
@@ -277,7 +277,7 @@ return {
 				approve_review = { lhs = "<C-a>", desc = "approve review", mode = { "n", "i" } },
 				comment_review = { lhs = "<C-m>", desc = "comment review", mode = { "n", "i" } },
 				request_changes = { lhs = "<C-r>", desc = "request changes review", mode = { "n", "i" } },
-				close_review_tab = { lhs = "<leader><C-c>", desc = "close review tab", mode = { "n", "i" } },
+				close_review_tab = { lhs = "<leader><Esc>", desc = "close review tab", mode = { "n", "i" } },
 			},
 			review_diff = {
 				submit_review = { lhs = "<leader>vs", desc = "submit review" },
