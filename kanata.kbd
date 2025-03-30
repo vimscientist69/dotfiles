@@ -21,6 +21,10 @@
     toggle-arrow-layer (layer-toggle arrow-layer)
     toggle-aerospace-layer (tap-hold $tap-time $hold-time spc (layer-toggle aerospace-layer))
 
+    switch-symbol-layer (layer-switch symbol-layer)
+    switch-number-layer (layer-switch number-layer)
+    switch-base-layer (layer-switch base)
+
     a-mod (tap-hold $tap-time $long-hold-time a lctrl)
     o-mod (tap-hold $tap-time $long-hold-time o lalt)
     e-mod (tap-hold $tap-time $hold-time e lmeta)
@@ -75,33 +79,65 @@
     n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 ralt)
     s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
 
-    e_bl (chord baselayer_homerow_chords d)
-    u_bl (chord baselayer_homerow_chords f)
-    h_bl (chord baselayer_homerow_chords j)
-    t_bl (chord baselayer_homerow_chords k)
+    e_bl (chord baselayer_homerow_mods_chords d)
+    u_bl (chord baselayer_homerow_mods_chords f)
+    h_bl (chord baselayer_homerow_mods_chords j)
+    t_bl (chord baselayer_homerow_mods_chords k)
+
+    ._bl (chord baselayer_swap_layers_chords e)
+    p_bl (chord baselayer_swap_layers_chords r)
+    g_bl (chord baselayer_swap_layers_chords u)
+    c_bl (chord baselayer_swap_layers_chords i)
+
+    i_sl (chord symlayer_backto_base g)
+    d_sl (chord symlayer_backto_base h)
+
+    i_nl (chord numlayer_backto_base g)
+    d_nl (chord numlayer_backto_base h)
+)
+
+(defchords numlayer_backto_base 30
+    (g  ) 5
+    (  d) 6
+    (g d) @switch-base-layer
+)
+
+(defchords symlayer_backto_base 30
+    (g  ) S-7
+    (  d) =
+    (g d) @switch-base-layer
+)
+
+(defchords baselayer_swap_layers_chords 30
+    (e      ) @toggle-number-layer
+    (  r    ) @toggle-symbol-layer
+    (  r u  ) @switch-symbol-layer
+    (    u  ) @toggle-symbol-layer
+    (      i) @toggle-number-layer
+    (e     i) @switch-number-layer
 )
 
 (defsrc)
 
-(defchords baselayer_homerow_chords 30
+(defchords baselayer_homerow_mods_chords 30
     (d      ) @e-mod
     (  f    ) @u-mod
     (d f    ) tab
-    (    j  ) @h-mod
-    (      k) @t-mod
-    (    j k) esc
     (  f j  ) ret
+    (    j  ) @h-mod
+    (    j k) esc
+    (      k) @t-mod
 )
 
 (deflayermap (base)
     q @;-mod
     w @,-mod
-    e @.-mod
-    r @p-mod
+    e @._bl
+    r @p_bl
     t y
     y f
-    u @g-mod
-    i @c-mod
+    u @g_bl
+    i @c_bl
     o @r-mod
     p @l-mod
     [ bspc 
@@ -111,8 +147,8 @@
     d @e_bl
     f @u_bl
     
-    g i
-    h d
+    g @i_bl
+    h @d_bl
 
     j @h_bl
     k @t_bl
@@ -247,6 +283,9 @@
     k A-8
     l A-9
     ; A-0
+
+    v lsft
+    n lsft
 
     __ nop0
 )
