@@ -21,8 +21,8 @@
     toggle-arrow-layer (layer-toggle arrow-layer)
     toggle-aerospace-layer (tap-hold $tap-time $hold-time spc (layer-toggle aerospace-layer))
 
-    switch-symbol-layer (layer-switch symbol-layer)
-    switch-number-layer (layer-switch number-layer)
+    switch-symbol-layer (layer-switch symbol-switch-layer)
+    switch-number-layer (layer-switch number-switch-layer)
     switch-base-layer (layer-switch base)
 
     a-mod (tap-hold $tap-time $long-hold-time a lctrl)
@@ -92,29 +92,10 @@
     i_sl (chord symlayer_backto_base g)
     d_sl (chord symlayer_backto_base h)
 
+    ;; TODO: create chords to press enter,
+    ;; escape and tab on switch num and sym layers (create neww layers just for that)
     i_nl (chord numlayer_backto_base g)
     d_nl (chord numlayer_backto_base h)
-)
-
-(defchords numlayer_backto_base 30
-    (g  ) 5
-    (  d) 6
-    (g d) @switch-base-layer
-)
-
-(defchords symlayer_backto_base 30
-    (g  ) S-7
-    (  d) =
-    (g d) @switch-base-layer
-)
-
-(defchords baselayer_swap_layers_chords 30
-    (e      ) @toggle-number-layer
-    (  r    ) @toggle-symbol-layer
-    (  r u  ) @switch-symbol-layer
-    (    u  ) @toggle-symbol-layer
-    (      i) @toggle-number-layer
-    (e     i) @switch-number-layer
 )
 
 (defsrc)
@@ -127,6 +108,27 @@
     (    j  ) @h-mod
     (    j k) esc
     (      k) @t-mod
+)
+
+(defchords baselayer_swap_layers_chords 30
+    (e      ) @.-mod
+    (  r    ) @p-mod
+    (  r u  ) @switch-symbol-layer
+    (    u  ) @g-mod
+    (      i) @c-mod
+    (e     i) @switch-number-layer
+)
+
+(defchords symlayer_backto_base 30
+    (g  ) S-7
+    (  d) =
+    (g d) @switch-base-layer
+)
+
+(defchords numlayer_backto_base 30
+    (g  ) 5
+    (  d) 6
+    (g d) @switch-base-layer
 )
 
 (deflayermap (base)
@@ -147,8 +149,8 @@
     d @e_bl
     f @u_bl
     
-    g @i_bl
-    h @d_bl
+    g i
+    h d
 
     j @h_bl
     k @t_bl
@@ -289,3 +291,55 @@
 
     __ nop0
 )
+
+(deflayermap (symbol-switch-layer)
+    e S-1
+    r S-\
+    u /
+    i S-2
+    [ bspc 
+
+    a @a-mod-symbol-layer
+    s @o-mod-symbol-layer
+    d @e-mod-symbol-layer
+    f @u-mod-symbol-layer
+
+    g @i_sl
+    h @d_sl
+
+    j @h-mod-symbol-layer
+    k @t-mod-symbol-layer
+    l @n-mod-symbol-layer
+    ; @s-mod-symbol-layer
+
+    c \
+    v S-/
+    n S-6
+    m S-3
+
+    __ nop0
+)
+
+(deflayermap (number-switch-layer)
+    e S-4
+    r S-`
+    u `
+    i S-5
+    [ bspc 
+
+    a @a-mod-number-layer
+    s @o-mod-number-layer
+    d @e-mod-number-layer
+    f @u-mod-number-layer
+
+    g @i_sl
+    h @d_sl
+
+    j @h-mod-number-layer
+    k @t-mod-number-layer
+    l @n-mod-number-layer
+    ; @s-mod-number-layer
+
+    __ nop0
+)
+
