@@ -16,19 +16,16 @@
 (defsrc
     tab
     ret
-    m
     spc
 )
 
 ;; Home row modifiers
 (defalias
-    switch-symbol-layer (layer-switch symbol-layer)
-    switch-number-layer (layer-switch number-layer)
-    switch-fn-layer (layer-switch fn-layer)
-    switch-arrow-layer (layer-switch arrow-layer)
-    switch-base-layer (layer-switch base)
-    switch-aerospace-layer-temp (layer-toggle aerospace-layer)
-    toggle-aerospace-layer (tap-hold $tap-time $hold-time spc @switch-aerospace-layer-temp)
+    toggle-symbol-layer (layer-toggle symbol-layer)
+    toggle-number-layer (layer-toggle number-layer)
+    toggle-fn-layer (layer-toggle fn-layer)
+    toggle-arrow-layer (layer-toggle arrow-layer)
+    toggle-aerospace-layer (tap-hold $tap-time $hold-time spc (layer-toggle aerospace-layer))
 
     a-mod (tap-hold $tap-time $long-hold-time a lctrl)
     o-mod (tap-hold $tap-time $long-hold-time o lalt)
@@ -38,6 +35,15 @@
     t-mod (tap-hold $tap-time $hold-time t rmeta)
     n-mod (tap-hold $tap-time $long-hold-time n ralt)
     s-mod (tap-hold $tap-time $long-hold-time s rctrl)
+
+    ;-mod (tap-hold $tap-time $long-hold-time ; @toggle-fn-layer)
+    ,-mod (tap-hold $tap-time $long-hold-time , @toggle-arrow-layer)
+    .-mod (tap-hold $tap-time $hold-time . @toggle-number-layer)
+    p-mod (tap-hold $tap-time $hold-time p @toggle-symbol-layer)
+    g-mod (tap-hold $tap-time $hold-time g @toggle-symbol-layer)
+    c-mod (tap-hold $tap-time $hold-time c @toggle-number-layer)
+    r-mod (tap-hold $tap-time $long-hold-time r @toggle-arrow-layer)
+    l-mod (tap-hold $tap-time $long-hold-time l @toggle-fn-layer)
 
     a-mod-symbol-layer (tap-hold $tap-time $long-hold-time + lctrl)
     o-mod-symbol-layer (tap-hold $tap-time $long-hold-time [ lalt)
@@ -75,7 +81,6 @@
     n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 ralt)
     s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
 
-    ;; base layer
     i_bl (chord baselayer_return g)
     d_bl (chord baselayer_return h)
 )
@@ -87,16 +92,16 @@
 )
 
 (deflayermap (base)
-    q ;
-    w ,
-    e .
-    r p
+    q @;-mod
+    w @,-mod
+    e @.-mod
+    r @p-mod
     t y
     y f
-    u g
-    i c
-    o r
-    p l
+    u @g-mod
+    i @c-mod
+    o @r-mod
+    p @l-mod
     [ bspc 
     ] esc
 
@@ -120,6 +125,7 @@
     v k
     b x
     n b
+    m m
     , w
     . v
     / z
