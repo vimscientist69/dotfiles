@@ -25,6 +25,7 @@
     switch-symbol-layer (layer-switch symbol-switch-layer)
     switch-number-layer (layer-switch number-switch-layer)
     switch-base-layer (layer-switch base)
+    switch-tab-layer (layer-switch tab-switch-layer)
 
     a-mod (tap-hold $tap-time $long-hold-time a lctrl)
     o-mod (tap-hold $tap-time $long-hold-time o lalt)
@@ -80,6 +81,15 @@
     n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 lalt)
     s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 lctrl)
 
+    a-mod-tab-layer (tap-hold $tap-time $long-hold-time M-1 lctrl)
+    o-mod-tab-layer (tap-hold $tap-time $long-hold-time M-2 lalt)
+    e-mod-tab-layer (tap-hold $tap-time $hold-time M-3 lmeta)
+    u-mod-tab-layer (tap-hold $tap-time $hold-time M-4 lsft)
+    h-mod-tab-layer (tap-hold $tap-time $hold-time M-7 lsft)
+    t-mod-tab-layer (tap-hold $tap-time $hold-time M-8 lmeta)
+    n-mod-tab-layer (tap-hold $tap-time $long-hold-time M-9 lalt)
+    s-mod-tab-layer (tap-hold $tap-time $long-hold-time M-0 lctrl)
+
     e_bl (chord baselayer_homerow_mods_chords d)
     u_bl (chord baselayer_homerow_mods_chords f)
     i_bl (chord baselayer_homerow_mods_chords g)
@@ -91,22 +101,28 @@
     u_ssl (chord symswitchlayer_homerow_mods_chords f)
     h_ssl (chord symswitchlayer_homerow_mods_chords j)
     t_ssl (chord symswitchlayer_homerow_mods_chords k)
+    i_ssl (chord symswitchlayer_backto_base g)
+    d_ssl (chord symswitchlayer_backto_base h)
 
     e_nsl (chord numswitchlayer_homerow_mods_chords d)
     u_nsl (chord numswitchlayer_homerow_mods_chords f)
     h_nsl (chord numswitchlayer_homerow_mods_chords j)
     t_nsl (chord numswitchlayer_homerow_mods_chords k)
+    i_nsl (chord numswitchlayer_backto_base g)
+    d_nsl (chord numswitchlayer_backto_base h)
+
+    e_tsl (chord tabswitchlayer_homerow_mods_chords d)
+    u_tsl (chord tabswitchlayer_homerow_mods_chords f)
+    h_tsl (chord tabswitchlayer_homerow_mods_chords j)
+    t_tsl (chord tabswitchlayer_homerow_mods_chords k)
+    i_tsl (chord tabswitchlayer_backto_base g)
+    d_tsl (chord tabswitchlayer_backto_base h)
 
     ._bl (chord baselayer_swap_layers_chords e)
     p_bl (chord baselayer_swap_layers_chords r)
     g_bl (chord baselayer_swap_layers_chords u)
     c_bl (chord baselayer_swap_layers_chords i)
 
-    i_sl (chord symlayer_backto_base g)
-    d_sl (chord symlayer_backto_base h)
-
-    i_nl (chord numlayer_backto_base g)
-    d_nl (chord numlayer_backto_base h)
 )
 
 (defsrc)
@@ -133,7 +149,7 @@
     (e     i) @switch-number-layer
 )
 
-(defchords symlayer_backto_base $chord-time
+(defchords symswitchlayer_backto_base $chord-time
     (g  ) S-7
     (  h) =
     (g h) @switch-base-layer
@@ -149,7 +165,7 @@
     (      k) @t-mod-symbol-layer
 )
 
-(defchords numlayer_backto_base $chord-time
+(defchords numswitchlayer_backto_base $chord-time
     (g  ) 5
     (  h) 6
     (g h) @switch-base-layer
@@ -165,6 +181,22 @@
     (      k) @t-mod-number-layer
 )
 
+(defchords tabswitchlayer_backto_base $chord-time
+    (g  ) M-5
+    (  h) M-6
+    (g h) @switch-base-layer
+)
+
+(defchords tabswitchlayer_homerow_mods_chords $chord-time
+    (d      ) @e-mod-tab-layer
+    (  f    ) @u-mod-tab-layer
+    (d f    ) tab
+    (  f j  ) ret
+    (    j  ) @h-mod-tab-layer
+    (    j k) esc
+    (      k) @t-mod-tab-layer
+)
+
 (deflayermap (base)
     q @;-mod
     w @,-mod
@@ -178,6 +210,7 @@
     p @l-mod
     [ bspc 
 
+    caps @switch-tab-layer
     a @a-mod
     s @o-mod
     d @e_bl
@@ -338,8 +371,8 @@
     d @e_ssl
     f @u_ssl
 
-    g @i_sl
-    h @d_sl
+    g @i_ssl
+    h @d_ssl
 
     j @h_ssl
     k @t_ssl
@@ -367,8 +400,8 @@
     d @e_nsl
     f @u_nsl
 
-    g @i_nl
-    h @d_nl
+    g @i_nsl
+    h @d_nsl
 
     j @h_nsl
     k @t_nsl
@@ -379,3 +412,21 @@
     __ nop0
 )
 
+(deflayermap (tab-switch-layer)
+    [ bspc 
+
+    a @a-mod-tab-layer
+    s @o-mod-tab-layer
+    d @e_tsl
+    f @u_tsl
+
+    g @i_tsl
+    h @d_tsl
+
+    j @h_tsl
+    k @t_tsl
+    l @n-mod-tab-layer
+    ; @s-mod-tab-layer
+
+    __ nop0
+)
