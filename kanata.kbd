@@ -82,6 +82,8 @@
 
     e_bl (chord baselayer_homerow_mods_chords d)
     u_bl (chord baselayer_homerow_mods_chords f)
+    i_bl (chord baselayer_homerow_mods_chords g)
+    d_bl (chord baselayer_homerow_mods_chords h)
     h_bl (chord baselayer_homerow_mods_chords j)
     t_bl (chord baselayer_homerow_mods_chords k)
 
@@ -110,13 +112,16 @@
 (defsrc)
 
 (defchords baselayer_homerow_mods_chords $chord-time
-    (d      ) @e-mod
-    (  f    ) @u-mod
-    (d f    ) tab
-    (  f j  ) ret
-    (    j  ) @h-mod
-    (    j k) esc
-    (      k) @t-mod
+    (d          ) @e-mod
+    (  f        ) @u-mod
+    (    g      ) i
+    (      h    ) d
+    (        j  ) @h-mod
+    (          k) @t-mod
+    (d f        ) tab
+    (        j k) esc
+    (  f     j  ) ret
+    (    g h    ) S-ret
 )
 
 (defchords baselayer_swap_layers_chords $chord-time
@@ -178,8 +183,8 @@
     d @e_bl
     f @u_bl
     
-    g i
-    h d
+    g @i_bl
+    h @d_bl
 
     j @h_bl
     k @t_bl
