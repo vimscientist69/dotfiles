@@ -4,9 +4,10 @@
 )
 
 (defvar
-   tap-time 200 
-   hold-time 200 
-   long-hold-time 200 
+   tap-time 125
+   hold-time 125 
+   long-hold-time 150
+   chord-time 25
 )
 
 (deflocalkeys-macos
@@ -29,10 +30,10 @@
     o-mod (tap-hold $tap-time $long-hold-time o lalt)
     e-mod (tap-hold $tap-time $hold-time e lmeta)
     u-mod (tap-hold $tap-time $hold-time u lsft)
-    h-mod (tap-hold $tap-time $hold-time h rsft)
-    t-mod (tap-hold $tap-time $hold-time t rmeta)
-    n-mod (tap-hold $tap-time $long-hold-time n ralt)
-    s-mod (tap-hold $tap-time $long-hold-time s rctrl)
+    h-mod (tap-hold $tap-time $hold-time h lsft)
+    t-mod (tap-hold $tap-time $hold-time t lmeta)
+    n-mod (tap-hold $tap-time $long-hold-time n lalt)
+    s-mod (tap-hold $tap-time $long-hold-time s lctrl)
 
     ;-mod (tap-hold $tap-time $long-hold-time ; @toggle-fn-layer)
     ,-mod (tap-hold $tap-time $long-hold-time , @toggle-arrow-layer)
@@ -47,37 +48,37 @@
     o-mod-symbol-layer (tap-hold $tap-time $long-hold-time [ lalt)
     e-mod-symbol-layer (tap-hold $tap-time $hold-time S-[ lmeta)
     u-mod-symbol-layer (tap-hold $tap-time $hold-time S-9 lsft)
-    h-mod-symbol-layer (tap-hold $tap-time $hold-time S-0 rsft)
-    t-mod-symbol-layer (tap-hold $tap-time $hold-time S-] rmeta)
-    n-mod-symbol-layer (tap-hold $tap-time $long-hold-time ] ralt)
-    s-mod-symbol-layer (tap-hold $tap-time $long-hold-time S-8 rctrl)
+    h-mod-symbol-layer (tap-hold $tap-time $hold-time S-0 lsft)
+    t-mod-symbol-layer (tap-hold $tap-time $hold-time S-] lmeta)
+    n-mod-symbol-layer (tap-hold $tap-time $long-hold-time ] lalt)
+    s-mod-symbol-layer (tap-hold $tap-time $long-hold-time S-8 lctrl)
 
     a-mod-number-layer (tap-hold $tap-time $long-hold-time 1 lctrl)
     o-mod-number-layer (tap-hold $tap-time $long-hold-time 2 lalt)
     e-mod-number-layer (tap-hold $tap-time $hold-time 3 lmeta)
     u-mod-number-layer (tap-hold $tap-time $hold-time 4 lsft)
-    h-mod-number-layer (tap-hold $tap-time $hold-time 7 rsft)
-    t-mod-number-layer (tap-hold $tap-time $hold-time 8 rmeta)
-    n-mod-number-layer (tap-hold $tap-time $long-hold-time 9 ralt)
-    s-mod-number-layer (tap-hold $tap-time $long-hold-time 0 rctrl)
+    h-mod-number-layer (tap-hold $tap-time $hold-time 7 lsft)
+    t-mod-number-layer (tap-hold $tap-time $hold-time 8 lmeta)
+    n-mod-number-layer (tap-hold $tap-time $long-hold-time 9 lalt)
+    s-mod-number-layer (tap-hold $tap-time $long-hold-time 0 lctrl)
 
     a-mod-arrow-layer (tap-hold $tap-time $long-hold-time del lctrl)
     o-mod-arrow-layer (tap-hold $tap-time $long-hold-time pgup lalt)
     e-mod-arrow-layer (tap-hold $tap-time $hold-time down lmeta)
     u-mod-arrow-layer (tap-hold $tap-time $hold-time up lsft)
-    h-mod-arrow-layer (tap-hold $tap-time $hold-time left rsft)
-    t-mod-arrow-layer (tap-hold $tap-time $hold-time rght rmeta)
-    n-mod-arrow-layer (tap-hold $tap-time $long-hold-time pgdn ralt)
-    s-mod-arrow-layer (tap-hold $tap-time $long-hold-time ins rctrl)
+    h-mod-arrow-layer (tap-hold $tap-time $hold-time left lsft)
+    t-mod-arrow-layer (tap-hold $tap-time $hold-time rght lmeta)
+    n-mod-arrow-layer (tap-hold $tap-time $long-hold-time pgdn lalt)
+    s-mod-arrow-layer (tap-hold $tap-time $long-hold-time ins lctrl)
 
     a-mod-fn-layer (tap-hold $tap-time $long-hold-time f1 lctrl)
     o-mod-fn-layer (tap-hold $tap-time $long-hold-time f2 lalt)
     e-mod-fn-layer (tap-hold $tap-time $hold-time f3 lmeta)
     u-mod-fn-layer (tap-hold $tap-time $hold-time f4 lsft)
-    h-mod-fn-layer (tap-hold $tap-time $hold-time f7 rsft)
-    t-mod-fn-layer (tap-hold $tap-time $hold-time f8 rmeta)
-    n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 ralt)
-    s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 rctrl)
+    h-mod-fn-layer (tap-hold $tap-time $hold-time f7 lsft)
+    t-mod-fn-layer (tap-hold $tap-time $hold-time f8 lmeta)
+    n-mod-fn-layer (tap-hold $tap-time $long-hold-time f9 lalt)
+    s-mod-fn-layer (tap-hold $tap-time $long-hold-time f10 lctrl)
 
     e_bl (chord baselayer_homerow_mods_chords d)
     u_bl (chord baselayer_homerow_mods_chords f)
@@ -108,7 +109,7 @@
 
 (defsrc)
 
-(defchords baselayer_homerow_mods_chords 30
+(defchords baselayer_homerow_mods_chords $chord-time
     (d      ) @e-mod
     (  f    ) @u-mod
     (d f    ) tab
@@ -118,7 +119,7 @@
     (      k) @t-mod
 )
 
-(defchords baselayer_swap_layers_chords 30
+(defchords baselayer_swap_layers_chords $chord-time
     (e      ) @.-mod
     (  r    ) @p-mod
     (  r u  ) @switch-symbol-layer
@@ -127,13 +128,13 @@
     (e     i) @switch-number-layer
 )
 
-(defchords symlayer_backto_base 30
+(defchords symlayer_backto_base $chord-time
     (g  ) S-7
     (  h) =
     (g h) @switch-base-layer
 )
 
-(defchords symswitchlayer_homerow_mods_chords 30
+(defchords symswitchlayer_homerow_mods_chords $chord-time
     (d      ) @e-mod-symbol-layer
     (  f    ) @u-mod-symbol-layer
     (d f    ) tab
@@ -143,13 +144,13 @@
     (      k) @t-mod-symbol-layer
 )
 
-(defchords numlayer_backto_base 30
+(defchords numlayer_backto_base $chord-time
     (g  ) 5
     (  h) 6
     (g h) @switch-base-layer
 )
 
-(defchords numswitchlayer_homerow_mods_chords 30
+(defchords numswitchlayer_homerow_mods_chords $chord-time
     (d      ) @e-mod-number-layer
     (  f    ) @u-mod-number-layer
     (d f    ) tab
