@@ -94,7 +94,7 @@ alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 
 alt-shift-c = 'reload-config'
 
-alt-r = 'mode resize'
+alt-shift-r = 'mode resize'
 # alt-minus = 'mode workspaces'
 alt-shift-b = 'mode empty'
 

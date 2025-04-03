@@ -24,6 +24,7 @@
 
     switch-symbol-layer (layer-switch symbol-switch-layer)
     switch-number-layer (layer-switch number-switch-layer)
+    switch-arrow-layer (layer-switch arrow-switch-layer)
     switch-base-layer (layer-switch base)
     switch-tab-layer (layer-switch tab-switch-layer)
 
@@ -122,7 +123,11 @@
     p_bl (chord baselayer_swap_layers_chords r)
     g_bl (chord baselayer_swap_layers_chords u)
     c_bl (chord baselayer_swap_layers_chords i)
+    ,_bl (chord baselayer_swap_layers_chords w)
+    r_bl (chord baselayer_swap_layers_chords r)
 
+    i_asl (chord arrowswitchlayer_backto_base g)
+    d_asl (chord arrowswitchlayer_backto_base h)
 )
 
 (defsrc)
@@ -141,12 +146,13 @@
 )
 
 (defchords baselayer_swap_layers_chords $chord-time
-    (e      ) @.-mod
-    (  r    ) @p-mod
-    (  r u  ) @switch-symbol-layer
-    (    u  ) @g-mod
-    (      i) @c-mod
-    (e     i) @switch-number-layer
+    (w         o) @switch-arrow-layer
+    (  e        ) @.-mod
+    (    r      ) @p-mod
+    (    r u    ) @switch-symbol-layer
+    (      u    ) @g-mod
+    (        i  ) @c-mod
+    (  e     i  ) @switch-number-layer
 )
 
 (defchords symswitchlayer_backto_base $chord-time
@@ -197,16 +203,22 @@
     (      k) @t-mod-tab-layer
 )
 
+(defchords arrowswitchlayer_backto_base $chord-time
+    (g  ) nop0
+    (  h) nop0
+    (g h) @switch-base-layer
+)
+
 (deflayermap (base)
     q @;-mod
-    w @,-mod
+    w @,_bl
     e @._bl
     r @p_bl
     t y
     y f
     u @g_bl
     i @c_bl
-    o @r-mod
+    o @r_bl
     p @l-mod
     [ bspc 
 
@@ -409,6 +421,19 @@
     ; @s-mod-number-layer
 
     spc @toggle-aerospace-layer
+    __ nop0
+)
+
+(deflayermap (arrow-switch-layer)
+    d down
+    f up
+
+    g @i_asl
+    h @d_asl
+
+    j left
+    k rght
+
     __ nop0
 )
 
