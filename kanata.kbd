@@ -124,7 +124,7 @@
     g_bl (chord baselayer_swap_layers_chords u)
     c_bl (chord baselayer_swap_layers_chords i)
     ,_bl (chord baselayer_swap_layers_chords w)
-    r_bl (chord baselayer_swap_layers_chords r)
+    r_bl (chord baselayer_swap_layers_chords o)
 
     i_asl (chord arrowswitchlayer_backto_base g)
     d_asl (chord arrowswitchlayer_backto_base h)
@@ -146,6 +146,7 @@
 )
 
 (defchords baselayer_swap_layers_chords $chord-time
+    (w          ) @,-mod
     (w         o) @switch-arrow-layer
     (  e        ) @.-mod
     (    r      ) @p-mod
@@ -153,6 +154,7 @@
     (      u    ) @g-mod
     (        i  ) @c-mod
     (  e     i  ) @switch-number-layer
+    (          o) @r-mod
 )
 
 (defchords symswitchlayer_backto_base $chord-time
