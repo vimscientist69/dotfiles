@@ -20,13 +20,14 @@
     toggle-number-layer (layer-toggle number-layer)
     toggle-fn-layer (layer-toggle fn-layer)
     toggle-arrow-layer (layer-toggle arrow-layer)
-    toggle-aerospace-layer (tap-hold $tap-time $hold-time spc (layer-toggle aerospace-layer))
+    toggle-aerospace-layer-taphold (tap-hold $tap-time $hold-time spc (layer-toggle aerospace-layer))
 
     switch-symbol-layer (layer-switch symbol-switch-layer)
     switch-number-layer (layer-switch number-switch-layer)
     switch-arrow-layer (layer-switch arrow-switch-layer)
     switch-base-layer (layer-switch base)
     switch-tab-layer (layer-switch tab-switch-layer)
+    switch-caps-layer (layer-switch caps-switch-layer)
 
     a-mod (tap-hold $tap-time $long-hold-time a lctrl)
     o-mod (tap-hold $tap-time $long-hold-time o lalt)
@@ -98,6 +99,9 @@
     h_bl (chord baselayer_homerow_mods_chords j)
     t_bl (chord baselayer_homerow_mods_chords k)
 
+    u_bsl (chord baseswitchlayer_homerow_mods_chords f)
+    h_bsl (chord baseswitchlayer_homerow_mods_chords j)
+
     e_ssl (chord symswitchlayer_homerow_mods_chords d)
     u_ssl (chord symswitchlayer_homerow_mods_chords f)
     h_ssl (chord symswitchlayer_homerow_mods_chords j)
@@ -163,6 +167,13 @@
     (g h) @switch-base-layer
 )
 
+
+(defchords baseswitchlayer_homerow_mods_chords $chord-time
+    (f  ) S-u
+    (  j) S-h
+    (f j) @switch-base-layer
+)
+
 (defchords symswitchlayer_homerow_mods_chords $chord-time
     (d      ) @e-mod-symbol-layer
     (  f    ) @u-mod-symbol-layer
@@ -206,8 +217,8 @@
 )
 
 (defchords arrowswitchlayer_backto_base $chord-time
-    (g  ) nop0
-    (  h) nop0
+    (g  ) i
+    (  h) d
     (g h) @switch-base-layer
 )
 
@@ -249,8 +260,9 @@
     , w
     . v
     / z
+    rshft @switch-caps-layer
 
-    spc @toggle-aerospace-layer
+    spc @toggle-aerospace-layer-taphold
     __ nop0
 )
 
@@ -398,7 +410,7 @@
     n S-6
     m S-3
 
-    spc @toggle-aerospace-layer
+    spc @toggle-aerospace-layer-taphold
     __ nop0
 )
 
@@ -422,7 +434,7 @@
     l @n-mod-number-layer
     ; @s-mod-number-layer
 
-    spc @toggle-aerospace-layer
+    spc @toggle-aerospace-layer-taphold
     __ nop0
 )
 
@@ -436,6 +448,7 @@
     j left
     k rght
 
+    spc spc
     __ nop0
 )
 
@@ -455,5 +468,48 @@
     l @n-mod-tab-layer
     ; @s-mod-tab-layer
 
+    __ nop0
+)
+
+(deflayermap (caps-switch-layer)
+    q S-;
+    w S-,
+    e S-.
+    r S-p
+    t S-y
+    y S-f
+    u S-g
+    i S-c
+    o S-r
+    p S-l
+    [ bspc 
+
+    caps @switch-tab-layer
+    a S-a
+    s S-o
+    d S-e
+    f @u_bsl
+    g S-i
+    h S-d
+
+    j @h_bsl
+    k S-t
+    l S-n
+    ; S-s
+    ' S-- 
+
+    z S-'
+    x S-q
+    c S-j
+    v S-k
+    b S-x
+    n S-b
+    m S-m
+    , S-w
+    . S-v
+    / S-z
+    rshft @switch-base-layer
+
+    spc @toggle-aerospace-layer-taphold
     __ nop0
 )
