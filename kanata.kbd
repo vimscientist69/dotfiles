@@ -28,6 +28,7 @@
     switch-base-layer (layer-switch base)
     switch-tab-layer (layer-switch tab-switch-layer)
     switch-caps-layer (layer-switch caps-switch-layer)
+    switch-qwerty-layer (layer-switch qwerty-layer)
 
     a-mod (tap-hold $tap-time $long-hold-time a lctrl)
     o-mod (tap-hold $tap-time $long-hold-time o lalt)
@@ -130,6 +131,10 @@
     ,_bl (chord baselayer_swap_layers_chords w)
     r_bl (chord baselayer_swap_layers_chords o)
 
+    k_bl (chord baselayer_swap_qwerty_chords v)
+    b_bl (chord baselayer_swap_qwerty_chords n)
+
+
     i_asl (chord arrowswitchlayer_backto_base g)
     d_asl (chord arrowswitchlayer_backto_base h)
 )
@@ -159,6 +164,12 @@
     (        i  ) @c-mod
     (  e     i  ) @switch-number-layer
     (          o) @r-mod
+)
+
+(defchords baselayer_swap_qwerty_chords $chord-time
+    (v  ) k
+    (  n) b
+    (v n) @switch-qwerty-layer
 )
 
 (defchords symswitchlayer_backto_base $chord-time
@@ -253,9 +264,9 @@
     z '
     x q
     c j
-    v k
+    v @k_bl
     b x
-    n b
+    n @b_bl
     m m
     , w
     . v
@@ -512,4 +523,8 @@
 
     spc @toggle-aerospace-layer-taphold
     __ nop0
+)
+
+(deflayermap (qwerty-layer)
+    rshft @switch-base-layer
 )
