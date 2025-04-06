@@ -526,5 +526,6 @@
 )
 
 (deflayermap (qwerty-layer)
+    lmeta mouseright
     rshft @switch-base-layer
 )
