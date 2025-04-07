@@ -348,11 +348,13 @@
 )
 
 (deflayermap (fn-layer)
+    w f11
     e brdown
     r brup
     t mute
     u volu
     i voldwn
+    o f12
     [ bspc 
 
     a @a-mod-fn-layer
@@ -360,7 +362,7 @@
     d @e-mod-fn-layer
     f @u-mod-fn-layer
 
-    g f6
+    g f5
     h f6
 
     j @h-mod-fn-layer
