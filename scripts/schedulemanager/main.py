@@ -35,7 +35,8 @@ def convert_schedule_from_file(filepath):
             if pending_block:
                 prev_start, prev_end = current_time_range
                 final_entries.append(
-                    f"{format_ampm_compact(prev_start)} - {format_ampm_compact(prev_end)} - {current_category} - [block]"
+                    f"{format_ampm_compact(prev_start)} - {format_ampm_compact(prev_end)} - {
+                        current_category} - {current_category}"
                 )
             start_time = to_dt(header_match.group(1))
             end_time = to_dt(header_match.group(2))
@@ -51,7 +52,8 @@ def convert_schedule_from_file(filepath):
             task_start = last_task_time
             task_end = task_start + timedelta(minutes=duration)
             final_entries.append(
-                f"{format_ampm_compact(task_start)} - {format_ampm_compact(task_end)} - {current_category} - {task}"
+                f"{format_ampm_compact(
+                    task_start)} - {format_ampm_compact(task_end)} - {current_category} - {task}"
             )
             last_task_time = task_end
             buffered_tasks.append(task)
@@ -63,7 +65,8 @@ def convert_schedule_from_file(filepath):
     if pending_block:
         start, end = current_time_range
         final_entries.append(
-            f"{format_ampm_compact(start)} - {format_ampm_compact(end)} - {current_category} - [block]"
+            f"{format_ampm_compact(
+                start)} - {format_ampm_compact(end)} - {current_category} - [block]"
         )
 
     return final_entries
