@@ -45,6 +45,7 @@ if [[ $- == *i* ]]; then
   alias wmr="aerospace config --get mode.resize.binding --json | less"
   alias ttt="tt -notheme -n 30 -showwpm -blockcursor -noskip -highlight2"
   alias swiftclean="rm -rf ~/Library/Caches/org.swift.swiftpm ~/.swiftpm ./.swiftpm ./.build ~/Library/Developer/Xcode/DerivedData"
+  alias getdailyplanner="cd ~/dev/dotfiles ; python3 -m scripts.schedulemanager.main ~/Documents/William/Templates/Daily\ Planner.md | pbcopy ; echo 'Copied planner to clipboard successfully.'"
 fi
 
 # history setup

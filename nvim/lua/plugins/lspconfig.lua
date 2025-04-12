@@ -30,6 +30,7 @@ return {
 					"shfmt",
 					"shellcheck",
 					"html",
+					"css-lsp",
 					"stylua",
 					"python-lsp-server",
 					"swiftlint",
@@ -64,6 +65,10 @@ return {
 				})
 
 				lspconfig.html.setup({
+					capabilities = capabilities,
+				})
+
+				lspconfig.cssls.setup({
 					capabilities = capabilities,
 				})
 

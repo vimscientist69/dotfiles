@@ -22,6 +22,7 @@ return {
 					"dockerfile",
 					"yaml",
 					"html",
+					"css",
 					"json",
 					"toml",
 					"vimdoc",
