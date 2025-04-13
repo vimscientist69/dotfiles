@@ -7,7 +7,7 @@ return {
 			{ "nvim-telescope/telescope-media-files.nvim" },
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
-				build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+				build = "make",
 			},
 			{ "nvim-tree/nvim-web-devicons", opts = {} },
 		},

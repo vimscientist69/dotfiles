@@ -1,5 +1,6 @@
 return {
 	"pwntester/octo.nvim",
+	commit = "e78daef",
 	requires = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
@@ -62,6 +63,11 @@ return {
 			"<leader>oic",
 			"<cmd>Octo issue create<CR>",
 			desc = "create issue",
+		},
+		{
+			"<leader>orb",
+			"<cmd>Octo repo browser<CR>",
+			desc = "Open repository in browser",
 		},
 	},
 	opts = {
@@ -211,7 +217,7 @@ return {
 				react_confused = { lhs = "<leader>rc", desc = "add/remove 😕 reaction" },
 			},
 			pull_request = {
-				checkout_pr = { lhs = "<leader>po", desc = "checkout PR" },
+				checkrout_pr = { lhs = "<leader>po", desc = "checkout PR" },
 				merge_pr = { lhs = "<leader>pm", desc = "merge commit PR" },
 				squash_and_merge_pr = { lhs = "<leader>opsm", desc = "squash and merge PR" },
 				rebase_and_merge_pr = { lhs = "<leader>oprm", desc = "rebase and merge PR" },
