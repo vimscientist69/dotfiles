@@ -1,3 +1,5 @@
+-- Install gitsubmodules parser and lsp
+
 return {
 	{ "nvim-treesitter/nvim-treesitter-context" },
 	{
