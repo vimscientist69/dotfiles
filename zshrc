@@ -46,6 +46,8 @@ if [[ $- == *i* ]]; then
   alias ttt="tt -notheme -n 30 -showwpm -blockcursor -noskip -highlight2"
   alias swiftclean="rm -rf ~/Library/Caches/org.swift.swiftpm ~/.swiftpm ./.swiftpm ./.build ~/Library/Developer/Xcode/DerivedData"
   alias getdailyplanner="cd ~/dev/dotfiles ; python3 -m scripts.schedulemanager.main ~/Documents/William/Templates/Daily\ Planner.md | pbcopy ; echo 'Copied planner to clipboard successfully.'"
+  alias disablesleep="sudo pmset -a disablesleep 1"
+  alias enablesleep="sudo pmset -a disablesleep 0"
 fi
 
 # history setup

@@ -33,7 +33,7 @@ return {
 					"css-lsp",
 					"stylua",
 					"python-lsp-server",
-					"swiftlint",
+					-- "swiftlint",
 					"docker-compose-language-service",
 					"dockerfile-language-server",
 					"taplo", -- toml files
