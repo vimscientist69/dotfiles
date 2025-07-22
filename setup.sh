@@ -3,6 +3,14 @@ brew install --cask obsidian
 echo "Installing OBS Studio..."
 brew install --cask obs
 
+echo "Installing borders"
+brew tap FelixKratz/formulae
+brew install borders
+
+echo "Installing nvim"
+brew tap FelixKratz/nvim
+brew install nvim
+
 echo "Installing kanata..."
 brew install kanata
 
