@@ -107,7 +107,7 @@ ln -s "$PWD/borders/" "$HOME/.config/borders"
 
 echo "Moving Lazygit config to config..."
 rm -rf "$HOME/Library/Application\ Support/lazygit"
-ln -s "$PWD/lazygit/" "$HOME/Library/Application\ Support/lazygit"
+ln -s "$PWD/lazygit/" "$HOME/Library/Application Support/lazygit"
 
 echo "Moving zshrc config to home..."
 rm -rf "$HOME/.zshrc"
