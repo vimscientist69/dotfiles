@@ -57,6 +57,9 @@ echo "Moving tmux config to config..."
 rm -rf "$HOME/.config/tmux"
 ln -s "$PWD/tmux/" "$HOME/.config/tmux"
 
+echo "Installing tpm (tmux plugin manager) in tmux plugin directory"
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+
 echo "Moving kanata.kbd to config..."
 rm -rf "$HOME/.config/kanata.kbd"
 cp "$PWD/kanata.kbd" "$HOME/.config"
