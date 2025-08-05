@@ -23,7 +23,6 @@
                     },
                     {
                         "description": "Chad Dvorak Advanced",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "conditions": [
@@ -1695,7 +1694,6 @@
                     },
                     {
                         "description": "Disable All Other Keys",
-                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": { "key_code": "grave_accent_and_tilde" },
