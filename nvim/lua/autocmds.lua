@@ -1,9 +1,9 @@
--- vim.api.nvim_create_autocmd("VimEnter", {
--- 	callback = function()
--- 		require("lazy").update()
--- 	end,
--- })
---
+vim.api.nvim_create_autocmd("VimEnter", {
+	callback = function()
+		require("lazy").update()
+	end,
+})
+
 vim.api.nvim_create_autocmd("User", {
 	pattern = "OilActionsPost",
 	callback = function(event)

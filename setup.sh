@@ -11,6 +11,9 @@ echo "Installing nvim"
 brew tap FelixKratz/nvim
 brew install nvim
 
+echo "Installing ascii-image-converter (neovim dashboard)"
+brew install TheZoraiz/ascii-image-converter/ascii-image-converter
+
 echo "Installing kanata..."
 brew install kanata
 

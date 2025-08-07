@@ -9,7 +9,18 @@ return {
 	opts = {
 		bigfile = { enabled = true },
 		dashboard = {
-			enabled = false,
+			enabled = true,
+			sections = {
+				{
+					section = "terminal",
+					cmd = "ascii-image-converter ~/.config/images/ai_profile_pic_no_bg.png -C -c",
+					random = 10,
+					pane = 1,
+					indent = 4,
+					height = 25,
+				},
+				-- { section = "startup" },
+			},
 		},
 		explorer = { enabled = false },
 		indent = { enabled = true },
