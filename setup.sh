@@ -139,6 +139,12 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "Installing powerleve10k..."
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
 
+echo "Installing cli touchtyping tool (tt)"
+mkdir -p /usr/local/bin /usr/local/share/man/man1 # Usually created by brew
+
+sudo curl -L https://github.com/lemnos/tt/releases/download/v0.4.2/tt-osx -o /usr/local/bin/tt && sudo chmod +x /usr/local/bin/tt
+sudo curl -o /usr/local/share/man/man1/tt.1.gz -L https://github.com/lemnos/tt/releases/download/v0.4.2/tt.1.gz
+
 echo "Moving keyboard layout to input sources..."
 sudo rm /Library/Keyboard\ Layouts/dvorak_prog_improved.keylayout
 sudo cp ./keyboard/dvorak_prog_improved.keylayout /Library/Keyboard\ Layouts
