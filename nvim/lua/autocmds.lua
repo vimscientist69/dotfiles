@@ -1,9 +1,10 @@
-vim.api.nvim_create_autocmd("VimEnter", {
-	callback = function()
-		require("lazy").update()
-	end,
-})
-
+-- Keep off - some plugins stop working as expected when updating to latest versions
+-- vim.api.nvim_create_autocmd("VimEnter", {
+-- 	callback = function()
+-- 		require("lazy").update()
+-- 	end,
+-- })
+--
 vim.api.nvim_create_autocmd("User", {
 	pattern = "OilActionsPost",
 	callback = function(event)
